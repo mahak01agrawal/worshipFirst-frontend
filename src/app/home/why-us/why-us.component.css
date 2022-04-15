@@ -1,0 +1,21 @@
+.contain{
+    padding-left: 340px;
+    padding-bottom: 90px;
+}
+.contain img{
+    padding-top:50px;
+    padding-left: 50px;
+    width:300px;
+    
+}
+.title-heading{
+    text-align: center; 
+ 
+   }
+   .title-heading span{
+     border: solid #779;
+     color: #ffa047;
+     font-size: 50px;
+     padding: 5px 20px;
+     box-shadow: -5px -10px 5px  rgba(255, 160, 71, 0.934);
+   }
