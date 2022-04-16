@@ -1,6 +1,12 @@
 .contain{
-    padding-left: 340px;
+    padding-left: 70px;
     padding-bottom: 90px;
+    gap: 1rem ;
+    display: -ms-grid;
+    display: grid;
+    /* -ms-grid-columns: (minmax(0.5px, 0.5fr)); */
+    grid-template-columns : repeat(auto-fit, minmax(5px, 1fr));
+  
 }
 .contain img{
     padding-top:50px;
