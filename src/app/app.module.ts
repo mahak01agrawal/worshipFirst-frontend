@@ -15,6 +15,7 @@ import { ContactComponent } from './contact/contact.component';
 import { BannerAudioComponent } from './home/banner-audio/banner-audio.component';
 import { ShopGeneralComponent } from './shop-general/shop-general.component';
 import { ShopSpecificComponent } from './shop-specific/shop-specific.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ShopSpecificComponent } from './shop-specific/shop-specific.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
