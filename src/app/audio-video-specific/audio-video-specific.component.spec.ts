@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShopSpecificComponent } from './shop-specific.component';
+import { AudioVideoSpecificComponent } from './audio-video-specific.component';
 
-describe('ShopSpecificComponent', () => {
-  let component: ShopSpecificComponent;
-  let fixture: ComponentFixture<ShopSpecificComponent>;
+describe('AudioVideoSpecificComponent', () => {
+  let component: AudioVideoSpecificComponent;
+  let fixture: ComponentFixture<AudioVideoSpecificComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ShopSpecificComponent ]
+      declarations: [ AudioVideoSpecificComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ShopSpecificComponent);
+    fixture = TestBed.createComponent(AudioVideoSpecificComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -84,7 +84,7 @@ section {
     background: #ffa047;
   }
   
-.category .box-container {
+.audio .box-container {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (minmax(16rem, 1fr)),[auto-fit];
@@ -92,31 +92,31 @@ section {
     gap: 1.5rem;
   }
   
-  .category .box-container .box {
+  .audio .box-container .box {
     padding: 2rem;
     border: 0.1rem solid #ffa047;
     text-align: center;
   }
   
-  .category .box-container .box:hover {
+  .audio .box-container .box:hover {
     background: #ffa047;
   }
      
-  .category .box-container .box:hover h3 {
+  .audio .box-container .box:hover h3 {
     color: #fff;
   }
   
-  .category .box-container .box img {
+  .audio .box-container .box img {
     height: 6rem;
     margin-bottom: 1rem;
   }
   
-  .category .box-container .box h3 {
+  .audio .box-container .box h3 {
     font-size: 1.7rem;
     color: #ffa047;
   }
   
-  .products .box-container {
+  .videos .box-container {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (minmax(26rem, 1fr)),[auto-fit];
@@ -124,22 +124,23 @@ section {
     gap: 1.5rem;
   }
   
-  .products .box-container .box {
+  .videos .box-container .box {
     position: relative;
     background: #f2f2f2;
     overflow: hidden;
+    
   }
   
-  .products .box-container .box:hover .image img {
+  .videos .box-container .box:hover .image img {
     -webkit-transform: scale(1.2);
             transform: scale(1.2);
   }
   
-  .products .box-container .box:hover .icons {
+  .videos .box-container .box:hover .icons {
     top: 0;
   }
   
-  .products .box-container .box .icons {
+  .videos .box-container .box .icons {
     position: absolute;
     top: -100%;
     left: 0;
@@ -159,7 +160,7 @@ section {
     z-index: 10;
   }
   
-  .products .box-container .box .icons a {
+  .videos .box-container .box .icons a {
     text-align: center;
     height: 5rem;
     line-height: 5rem;
@@ -171,48 +172,48 @@ section {
             box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   }
   
-  .products .box-container .box .icons a:hover {
+  .videos .box-container .box .icons a:hover {
     background: #ffa047;
     color: #fff;
   }
   
-  .products .box-container .box .image {
+  .videos .box-container .box .image {
     height: 30rem;
     width: 100%;
     overflow: hidden;
   }
   
-  .products .box-container .box .image img {
+  .videos .box-container .box .image img {
     height: 100%;
     width: 100%;
     -o-object-fit: cover;
        object-fit: cover;
   }
   
-  .products .box-container .box .content {
+  .videos .box-container .box .content {
     padding: 1.5rem 2rem;
   }
   
-  .products .box-container .box .content .price {
+  .videos .box-container .box .content .price {
     font-size: 1.7rem;
     color: #779;
   }
   
-  .products .box-container .box .content h3 {
+  .videos .box-container .box .content h3 {
     font-size: 2rem;
     color: #ffa047;
     padding: .5rem 0;
   }
   
-  .products .box-container .box .content .stars {
+  .videos .box-container .box .content .stars {
     font-size: 1.7rem;
   }
   
-  .products .box-container .box .content .stars i {
+  .videos .box-container .box .content .stars i {
     color: gold;
   }
   
-  .products .box-container .box .content .stars span {
+  .videos .box-container .box .content .stars span {
     color: #779;
   }
   

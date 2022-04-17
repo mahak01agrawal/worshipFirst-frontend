@@ -15,6 +15,9 @@ import { ContactComponent } from './contact/contact.component';
 import { BannerAudioComponent } from './home/banner-audio/banner-audio.component';
 import { ShopGeneralComponent } from './shop-general/shop-general.component';
 import { ShopSpecificComponent } from './shop-specific/shop-specific.component';
+import { AudioVideoGeneralComponent } from './audio-video-general/audio-video-general.component';
+import { AudioVideoSpecificComponent } from './audio-video-specific/audio-video-specific.component';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { ShopSpecificComponent } from './shop-specific/shop-specific.component';
      ContactComponent,
      BannerAudioComponent,
      ShopGeneralComponent,
-     ShopSpecificComponent
+     ShopSpecificComponent,
+     AudioVideoGeneralComponent,
+     AudioVideoSpecificComponent
+    
   ],
   imports: [
     BrowserModule,
