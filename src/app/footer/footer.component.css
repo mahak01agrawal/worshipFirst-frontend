@@ -3,8 +3,22 @@ section {
     padding: 3rem 9%;
   }
 .footer {
-    background: #f6fbf6;
+ 
+    background: #faf6f2f5;
     
+  } 
+  .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: .9rem 3rem;
+    font-size: 1.7rem;
+    background: #ffa047;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background: #fdb068;
   }
   
   
@@ -49,6 +63,24 @@ section {
   .footer .box-container .box a i {
     padding-right: .5rem;
     color: #ffa047;
+  }
+  .footer .box-container .box form input[type="email"] {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    font-size: 1.6rem;
+    color: #ffa047;
+    text-transform: none;
+    margin: .7rem 0;
+    border: 0.1rem solid #ffa047;
+  }
+  .footer .box-container .box form input[type="text"] {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    font-size: 1.6rem;
+    color: #ffa047;
+    text-transform: none;
+    margin: .7rem 0;
+    border: 0.1rem solid #ffa047;
   }
   
   
