@@ -17,7 +17,7 @@ import { ShopGeneralComponent } from './shop-general/shop-general.component';
 import { ShopSpecificComponent } from './shop-specific/shop-specific.component';
 import { AudioVideoGeneralComponent } from './audio-video-general/audio-video-general.component';
 import { AudioVideoSpecificComponent } from './audio-video-specific/audio-video-specific.component';
-
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -40,7 +40,8 @@ import { AudioVideoSpecificComponent } from './audio-video-specific/audio-video-
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
