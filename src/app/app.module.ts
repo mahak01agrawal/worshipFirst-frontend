@@ -15,9 +15,13 @@ import { ContactComponent } from './contact/contact.component';
 import { BannerAudioComponent } from './home/banner-audio/banner-audio.component';
 import { ShopGeneralComponent } from './shop-general/shop-general.component';
 import { ShopSpecificComponent } from './shop-specific/shop-specific.component';
+<<<<<<< HEAD
 import { AudioVideoGeneralComponent } from './audio-video-general/audio-video-general.component';
 import { AudioVideoSpecificComponent } from './audio-video-specific/audio-video-specific.component';
 import {HttpClientModule} from '@angular/common/http';
+=======
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+>>>>>>> 66d9cbcb39cfb919b840c17f0d7ebff69b83c3f0
 
 @NgModule({
   declarations: [

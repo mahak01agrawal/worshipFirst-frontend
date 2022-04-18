@@ -3,7 +3,10 @@
     <span>Popular Packages</span>
 </section>
 <section class="banner-container">
+    <div class="banner" *ngFor=" let packege of packageList">
+        <img src={{packege.image}} alt="">
 
+<<<<<<< HEAD
     <div class="banner" *ngFor=" let  package of packageList; index as i">
         <div *ngIf='i<6'>
             <img src={{package.image}} alt="">
@@ -16,6 +19,16 @@
     </div>
     <!-- 
     <div class="banner">
+=======
+        <div class="content">
+            <span>limited offer</span>
+            <h3>upto 50% off</h3>
+            <a href="" class="btn">Shop Now</a>
+        </div>
+    </div>
+
+    <!-- <div class="banner">
+>>>>>>> 66d9cbcb39cfb919b840c17f0d7ebff69b83c3f0
         <img src="../assets/image/samagri.jpg" alt="">
         <div class="content">
             <span>limited offer</span>
@@ -68,6 +81,7 @@
 </section>
 <section class="banner-container">
 
+<<<<<<< HEAD
     <div class="banner" *ngFor="let product of productList;  index as i">
         <div *ngIf="i<6">
             <img src={{product.image}} alt="">
@@ -78,6 +92,18 @@
             </div>
         </div>
     </div>
+=======
+    <div class="banner" *ngFor="let product of productList">
+
+        <img src={{product.image}} alt="">
+        <div class="content">
+            <span>limited offer</span>
+            <h3>upto 50% off</h3>
+            <a href="" class="btn">Shop Now</a>
+        </div>
+    </div>
+
+>>>>>>> 66d9cbcb39cfb919b840c17f0d7ebff69b83c3f0
     <!-- <div class="banner">
         <img src="../../../assets/image/images6.jpeg" alt="">
         <div class="content">
