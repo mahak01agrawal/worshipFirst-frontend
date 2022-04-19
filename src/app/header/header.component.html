@@ -12,8 +12,9 @@
     <div class="icons">
         <div id="menu-btn" class="fas fa-bars" (click)="navLinks(nav)"></div>
         <div id="search-btn" class="fas fa-search" (click)="searchBtn(search)"></div>
-        <div id="cart-btn" class="fas fa-shopping-cart"(click)="showCart(cart)" ></div>
+        <div id="cart-btn" class="fas fa-shopping-cart" (click)="showCart(cart)"></div>
         <div id="login-btn" class="fas fa-user" (click)="showLogin(login)"></div>
+     
     </div>
 
 </header>
@@ -22,7 +23,7 @@
 
 <!-- closer btn  -->
 
-<div id="closer" #closer class="fas fa-times" (click)="closeBar()" ></div>
+<div id="closer" #closer class="fas fa-times" (click)="closeBar()"></div>
 
 <!-- navbar  -->
 
@@ -31,24 +32,13 @@
     <a routerLink="shop" (click)="closeBar()">shop</a>
     <a routerLink="audio-video" (click)="closeBar()">Audio/Videos</a>
     <a routerLink="about" (click)="closeBar()">about</a>
-    <a routerLink="contact"  (click)="closeBar()">contact</a>
+    <a routerLink="contact" (click)="closeBar()">contact</a>
 </nav>
 
 <!-- shopping cart  -->
 
 <div class="shopping-cart" id="cart" #cart>
 
-     <div class="box">
-        <i class="fas fa-times"></i>
-        <img src="#" alt="">
-        <div class="content">
-            <h3>Kalash</h3>
-            <span class="quantity"> 1 </span>
-            <span class="multiply"> x </span>
-            <span class="price"> $140.00 </span>
-        </div>
-    </div>
-    
     <div class="box">
         <i class="fas fa-times"></i>
         <img src="#" alt="">
@@ -59,7 +49,7 @@
             <span class="price"> $140.00 </span>
         </div>
     </div>
-    
+
     <div class="box">
         <i class="fas fa-times"></i>
         <img src="#" alt="">
@@ -70,7 +60,7 @@
             <span class="price"> $140.00 </span>
         </div>
     </div>
-    
+
     <div class="box">
         <i class="fas fa-times"></i>
         <img src="#" alt="">
@@ -81,7 +71,18 @@
             <span class="price"> $140.00 </span>
         </div>
     </div>
-    
+
+    <div class="box">
+        <i class="fas fa-times"></i>
+        <img src="#" alt="">
+        <div class="content">
+            <h3>Kalash</h3>
+            <span class="quantity"> 1 </span>
+            <span class="multiply"> x </span>
+            <span class="price"> $140.00 </span>
+        </div>
+    </div>
+
     <h3 class="total"> total : <span>$560.00</span> </h3>
 
     <a href="#" class="btn">checkout cart</a>
@@ -103,6 +104,6 @@
         <p>don't have an account? <a href="#">create now</a></p>
         <p>Register As Pandit ji :<a href="#"> Register</a></p>
     </form>
-
 </div>
+
 <!-- <router-outlet></router-outlet> -->

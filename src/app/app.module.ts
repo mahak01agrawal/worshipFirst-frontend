@@ -17,6 +17,7 @@ import { ShopGeneralComponent } from './shop-general/shop-general.component';
 import { ShopSpecificComponent } from './shop-specific/shop-specific.component';
 import { AudioVideoGeneralComponent } from './audio-video-general/audio-video-general.component';
 import { AudioVideoSpecificComponent } from './audio-video-specific/audio-video-specific.component';
+import { BookPriestComponent } from './book-priest/book-priest.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { AudioVideoSpecificComponent } from './audio-video-specific/audio-video-
      ShopGeneralComponent,
      ShopSpecificComponent,
      AudioVideoGeneralComponent,
-     AudioVideoSpecificComponent
+     AudioVideoSpecificComponent,
+     BookPriestComponent
     
   ],
   imports: [

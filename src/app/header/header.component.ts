@@ -30,15 +30,21 @@ export class HeaderComponent implements OnInit {
     login.classList.toggle('active');
   }
   
+
+  
   closeBar() {
     let closer: any = document.querySelector('#closer');
     let nav: any = document.querySelector('#nav');
     let cart: any = document.querySelector('#cart');
     let login: any = document.querySelector('#login');
+    let user: any = document.querySelector('#user');
+
     closer.style.display = 'none';
     nav.classList.remove('active');
     cart.classList.remove('active');
     login.classList.remove('active');
+    
+
   }
   searchBtn(search:any){
     search.classList.toggle('active');
