@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { AudioVideoGeneralComponent } from './audio-video-general/audio-video-general.component';
 import { AudioVideoSpecificComponent } from './audio-video-specific/audio-video-specific.component';
+import { BookPriestComponent } from './book-priest/book-priest.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { ShopGeneralComponent } from './shop-general/shop-general.component';
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path:"about",component:AboutComponent},
   {path:"contact",component:ContactComponent},
   {path:"audio-video",component:AudioVideoGeneralComponent},
-  {path:"audio-videos",component:AudioVideoSpecificComponent}
+  {path:"audio-videos",component:AudioVideoSpecificComponent},
+  {path:"book-priest",component:BookPriestComponent}
 
 
 ];
