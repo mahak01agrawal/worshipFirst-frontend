@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import {SocialAuthService,SocialUser, GoogleLoginProvider} from "angularx-social-login";
+import { PriestService } from '../priest.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-header',
@@ -6,13 +10,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
-
+  user! : SocialUser;
+  email:string="";
+  password:string="";
+  constructor(private authService : SocialAuthService,private userService:UserService,private priest:PriestService,private router:Router) { }
+  flag:boolean = false;
   ngOnInit(): void {
+    this.authService.authState.subscribe((data:any)=>{
+      this.user = data;
+      this.userService.socialLogin(this.user).subscribe(data=>{
+        console.log(data);
+        this.flag=true;
+      });
+    })
   }
 
-
+  socialLogin() {
+    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+  }
+  signOut(){
+    this.authService.signOut();
+  }
 
   navLinks(nav: any) {
     let closer: any = document.querySelector('#closer');
@@ -43,7 +61,30 @@ export class HeaderComponent implements OnInit {
   searchBtn(search:any){
     search.classList.toggle('active');
   }
+  
+  loginAsUser(){
+    console.log(this.email+" "+this.password);
+    this.userService.userLogin(this.email,this.password).subscribe(data=>{
+      console.log(data);
+      localStorage.setItem("token",data.token);
+    });
+  }
 
+  loginAsPandit(){
+    this.priest.priestLogin(this.email,this.password).subscribe(data=>{
+      console.log(data);
+      localStorage.setItem("token",data.token);
+      this.router.navigate(['priest']);
+    })
+  }
 
-
+  isLoggedIn(){
+    if(this.priest.checkToken()){
+      return true;
+    }
+      return false;
+  }
+  signout(){
+    localStorage.removeItem("token");
+  }
 }
