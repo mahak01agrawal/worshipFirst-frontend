@@ -18,6 +18,7 @@ import { ShopSpecificComponent } from './shop-specific/shop-specific.component';
 import { AudioVideoGeneralComponent } from './audio-video-general/audio-video-general.component';
 import { AudioVideoSpecificComponent } from './audio-video-specific/audio-video-specific.component';
 import { BookPriestComponent } from './book-priest/book-priest.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { BookPriestComponent } from './book-priest/book-priest.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,20 +1,34 @@
-
 <!-- banner section starts  -->
 <section class="title-heading">
     <span>Popular Packages</span>
 </section>
 <section class="banner-container">
+    <div class="banner" *ngFor=" let packege of packageList">
+        <img src={{packege.image}} alt="">
 
+<<<<<<< HEAD
+    <div class="banner" *ngFor=" let  package of packageList; index as i">
+        <div *ngIf='i<6'>
+            <img src={{package.image}} alt="">
+            <div class="content">
+                <span>limited offer</span>
+                <h3>upto 50% off</h3>
+                <a routerLink="shops" class="btn">Shop Now</a>
+            </div>
+        </div>
+    </div>
+    <!-- 
     <div class="banner">
-        <img src="../assets/image/agarbati2.jpg" alt="">
+=======
         <div class="content">
             <span>limited offer</span>
             <h3>upto 50% off</h3>
-            <a routerLink="shops"class="btn">Shop Now</a>
+            <a href="" class="btn">Shop Now</a>
         </div>
     </div>
 
-    <div class="banner">
+    <!-- <div class="banner">
+>>>>>>> 66d9cbcb39cfb919b840c17f0d7ebff69b83c3f0
         <img src="../assets/image/samagri.jpg" alt="">
         <div class="content">
             <span>limited offer</span>
@@ -55,7 +69,7 @@
             <h3>upto 50% off</h3>
             <a routerLink="shops" class="btn">Shop Now</a>
         </div>
-    </div>
+    </div> -->
 </section>
 
 
@@ -67,16 +81,30 @@
 </section>
 <section class="banner-container">
 
-    <div class="banner">
-        <img src="../../../assets/image/krishnaji1.jpeg" alt="">
+<<<<<<< HEAD
+    <div class="banner" *ngFor="let product of productList;  index as i">
+        <div *ngIf="i<6">
+            <img src={{product.image}} alt="">
+            <div class="content">
+                <span>limited offer</span>
+                <h3>upto 50% off</h3>
+                <a routerLink="shops" class="btn">Shop Now</a>
+            </div>
+        </div>
+    </div>
+=======
+    <div class="banner" *ngFor="let product of productList">
+
+        <img src={{product.image}} alt="">
         <div class="content">
             <span>limited offer</span>
             <h3>upto 50% off</h3>
-            <a routerLink="shops" class="btn">Shop Now</a>
+            <a href="" class="btn">Shop Now</a>
         </div>
     </div>
 
-    <div class="banner">
+>>>>>>> 66d9cbcb39cfb919b840c17f0d7ebff69b83c3f0
+    <!-- <div class="banner">
         <img src="../../../assets/image/images6.jpeg" alt="">
         <div class="content">
             <span>limited offer</span>
@@ -99,7 +127,7 @@
         <div class="content">
             <span>limited offer</span>
             <h3>upto 50% off</h3>
-            <a routerLink="shops"class="btn">Shop Now</a>
+            <a routerLink="shops" class="btn">Shop Now</a>
         </div>
     </div>
     <div class="banner">
@@ -117,7 +145,7 @@
             <h3>upto 50% off</h3>
             <a routerLink="shops" class="btn">Shop Now</a>
         </div>
-    </div>
+    </div> -->
 </section>
 
 
