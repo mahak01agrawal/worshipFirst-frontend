@@ -29,7 +29,6 @@ import { TokenIntercepterService } from './token-intercepter.service';
 import { UserDashBoardComponent } from './user-dash-board/user-dash-board.component';
 import { PriestPageComponent } from './priest-page/priest-page.component';
 import { BookPriestComponent } from './book-priest/book-priest.component';
-import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -51,7 +50,7 @@ import {HttpClientModule} from '@angular/common/http';
      AudioVideoSpecificComponent,
      PageNotFountComponent,
      UserDashBoardComponent,
-     PriestPageComponent
+     PriestPageComponent,
      BookPriestComponent
     
   ],
