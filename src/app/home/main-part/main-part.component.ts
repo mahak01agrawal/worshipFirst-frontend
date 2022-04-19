@@ -1,15 +1,29 @@
+
 import { Component, OnInit } from '@angular/core';
+import { CategoryService } from 'src/app/category.service';
 
 @Component({
   selector: 'app-main-part',
   templateUrl: './main-part.component.html',
-  styleUrls: ['./main-part.component.css']
+  styleUrls: ['./main-part.component.css'],
 })
 export class MainPartComponent implements OnInit {
 
-  constructor() { }
+  productList: any[] = [];
+  packageList: any[] = [];
 
-  ngOnInit(): void {
+  constructor(private category: CategoryService) {
+    category.View('package').subscribe((data) => {
+      console.log(data);
+      this.packageList = data;
+    });
+
+    category.View('product').subscribe((data) => {
+      console.log(data);
+      this.productList = data;
+    });
   }
-
+  ngOnInit(): void {}
 }
+
+  

@@ -4,12 +4,12 @@
   }
   .nav li a{
    color: white;
-   font-size: 30px;
+   font-size:  20px;
   }
   .nav li .nav-link:hover{
     transition: 0.5s ease-in-out;
     color:#779 !important;
-    /* font-size: 30px; */
+   
    }
    
   .nav li .dropdown-item{

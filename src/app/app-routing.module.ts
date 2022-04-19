@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { AudioVideoGeneralComponent } from './audio-video-general/audio-video-general.component';
 import { AudioVideoSpecificComponent } from './audio-video-specific/audio-video-specific.component';
+import { BookPriestComponent } from './book-priest/book-priest.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFountComponent } from './page-not-fount/page-not-fount.component';
@@ -25,9 +26,11 @@ const routes: Routes = [
       {path:"contact",component:ContactComponent},
       {path:"audio-video",component:AudioVideoGeneralComponent},
       {path:"audio-videos",component:AudioVideoSpecificComponent},
+      {path:"book-priest",component:BookPriestComponent}  
   ]},
   {path:'priest',component : PriestPageComponent},
   {path : "**", component : PageNotFountComponent}
+
 ];
 
 @NgModule({
