@@ -72,7 +72,7 @@ section {
     background: #fdb068;
   }
   
-.category .box-container {
+.priest .box-container {
     /* display: -ms-grid; */
     display: grid;
     /* -ms-grid-columns: (minmax(16rem, 1fr)),[auto-fit]; */
@@ -80,7 +80,7 @@ section {
     gap: 1.5rem;
   }
   
-  .category .box-container .box {
+  .priest .box-container .box {
     padding: 4rem;
     border: 0.1rem solid #ffa047;
     /* text-align: center; */
@@ -90,13 +90,13 @@ section {
   }
   
    
-  .category .box-container .box img {
+  .priest .box-container .box img {
     height: 20rem;
     width: 15rem;
     margin-bottom: 1rem;
   }
   
-  .category .box-container .box h3 {
+  .priest .box-container .box h3 {
     font-size: 1.7rem;
     color: #ffa047;
     padding-right: 5px;
