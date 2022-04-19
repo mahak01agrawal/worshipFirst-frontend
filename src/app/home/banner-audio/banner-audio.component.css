@@ -1,58 +1,4 @@
 
-/* .heading h3 {
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    color: #fff;
-  } */
-  section {
-    padding: 3rem 9%;
-  }
-  /* .heading p {
-    color: #fff;
-    font-size: 2rem;
-  }
-  
-  .heading p span {
-    color: yellow;
-  }
-  
-  .heading p a {
-    color: #fff;
-  }
-  
-  .heading p a:hover {
-    color: yellow;
-  }
-  
-  .title {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    margin-bottom: 3rem;
-    border-bottom: 0.1rem solid #ffa047;
-    padding-bottom: 1.5rem;
-  }
-  
-  .title span {
-    font-size: 2.5rem;
-    color: #ffa047;
-  }
-  
-  .title a {
-    font-size: 1.5rem;
-    color: #779;
-  }
-  
-  .title a:hover {
-    color: #ffa047;
-  } */
-  
   .btn {
     display: inline-block;
     margin-top: 1rem;
@@ -138,7 +84,7 @@
   .title-heading span{
     border: solid #779;
     color: #ffa047;
-    font-size: 50px;
+    font-size: 30px;
     padding: 5px 20px;
     box-shadow: -5px -10px 5px  rgba(255, 160, 71, 0.934);
     border-radius: 20px;

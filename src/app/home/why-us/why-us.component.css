@@ -1,6 +1,6 @@
 .contain{
     padding-left: 70px;
-    padding-bottom: 90px;
+    padding-bottom: 20px;
     gap: 1rem ;
     display: -ms-grid;
     display: grid;
@@ -9,9 +9,9 @@
   
 }
 .contain img{
-    padding-top:50px;
+    padding-top:0px;
     padding-left: 50px;
-    width:300px;
+    width:250px;
     
 }
 .title-heading{
@@ -21,8 +21,8 @@
    .title-heading span{
      border: solid #779;
      color: #ffa047;
-     font-size: 50px;
-     padding: 5px 20px;
+     font-size: 30px;
+     padding: 2px 20px;
      box-shadow: -5px -10px 5px  rgba(255, 160, 71, 0.934);
      border-radius: 20px;
    }
