@@ -402,3 +402,69 @@
     text-decoration: underline;
   }
   
+  .user-profile {
+    position: fixed;
+    top: 0;
+    right: -101%;
+    z-index: 1000;
+    width: 35rem;
+    height: 100vh;
+    background: #fff;
+    padding: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  
+  .dash .active {
+    right: 0;
+    -webkit-box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.5);
+    -webkit-transition: .4s linear;
+    transition: .4s linear;
+  }
+  .box {
+    padding: 1.7rem;
+    border: 0.1rem solid #ffa047;
+  }
+  .dash h3 {
+    font-size: 2.2rem;
+    padding-bottom: 1rem;
+    color: #ffa047;
+  }
+  .dash img{
+    border-radius: 50%;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  }
+  .dash .btn {
+    margin: 1rem 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .dash p {
+    padding-top: 2px;
+    font-size: 2.4rem;
+    color: #779;
+    text-align: center;
+  }
+  
+  .dash a {
+    color: #ffa047;
+    padding-right: 50px;
+    padding-top: 2px;
+    font-size: 2rem;
+  }
+  
+  .dash a:hover {
+    text-decoration: underline;
+  }
