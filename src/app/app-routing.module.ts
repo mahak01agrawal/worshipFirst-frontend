@@ -12,7 +12,6 @@ import { ShopGeneralComponent } from './shop-general/shop-general.component';
 import { ShopSpecificComponent } from './shop-specific/shop-specific.component';
 import { UserDashBoardComponent } from './user-dash-board/user-dash-board.component';
 
-
 const routes: Routes = [
   { 
     path : "", component : UserDashBoardComponent,
@@ -35,6 +34,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

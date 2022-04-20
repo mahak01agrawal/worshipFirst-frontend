@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {SocialLoginModule, SocialAuthServiceConfig} from "angularx-social-login";
-import {HttpClientModule, HTTP_INTERCEPTORS} from "@angular/common/http"
-import {GoogleLoginProvider} from "angularx-social-login";
+import {
+  SocialLoginModule,
+  SocialAuthServiceConfig,
+} from 'angularx-social-login';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { GoogleLoginProvider } from 'angularx-social-login';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,59 +34,61 @@ import { PriestPageComponent } from './priest-page/priest-page.component';
 import { BookPriestComponent } from './book-priest/book-priest.component';
 import { MediaFileService } from './media-file.service';
 
-
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-     HeaderComponent,
-     NavLinksComponent,
-     ImgSliderComponent,
-     MainPartComponent,
-     WhyUsComponent,
-     HomeComponent,
-     AboutComponent,
-     ContactComponent,
-     BannerAudioComponent,
-     ShopGeneralComponent,
-     ShopSpecificComponent,
-     AudioVideoGeneralComponent,
-     AudioVideoSpecificComponent,
-     PageNotFountComponent,
-     UserDashBoardComponent,
-     PriestPageComponent,
-     BookPriestComponent
-    
+    HeaderComponent,
+    NavLinksComponent,
+    ImgSliderComponent,
+    MainPartComponent,
+    WhyUsComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactComponent,
+    BannerAudioComponent,
+    ShopGeneralComponent,
+    ShopSpecificComponent,
+    AudioVideoGeneralComponent,
+    AudioVideoSpecificComponent,
+    PageNotFountComponent,
+    UserDashBoardComponent,
+    PriestPageComponent,
+    BookPriestComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SocialLoginModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
-  providers: [ {
-    provide : "SocialAuthServiceConfig",
-    useValue : {
-      autoLogin : false,
-      providers : [
-        {
-          id : GoogleLoginProvider.PROVIDER_ID,
-          provider : new GoogleLoginProvider('184960910870-0c1jonkrqg20ht7f5etv09ptted3lokc.apps.googleusercontent.com')
-        }
-      ]
-    } as SocialAuthServiceConfig,
-},
-  UserService,
-  PriestService,
-  AuthenticationGuard,
-  {
-    provide:HTTP_INTERCEPTORS,
-    useClass : TokenIntercepterService,
-    multi : true
-  },
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '184960910870-0c1jonkrqg20ht7f5etv09ptted3lokc.apps.googleusercontent.com'
+            ),
+          },
+        ],
+      } as SocialAuthServiceConfig,
+    },
+    UserService,
+    PriestService,
+    AuthenticationGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenIntercepterService,
+      multi: true,
+    },
+  ],
   MediaFileService
 ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

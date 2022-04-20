@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CategoryService } from 'src/app/category.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class MainPartComponent implements OnInit {
   productList: any[] = [];
   packageList: any[] = [];
 
-  constructor(private category: CategoryService) {
+  constructor(private category: CategoryService,private router:Router) {
     category.View('package').subscribe((data) => {
       console.log(data);
       this.packageList = data;
@@ -23,7 +24,12 @@ export class MainPartComponent implements OnInit {
       this.productList = data;
     });
   }
+  
   ngOnInit(): void {}
+  shopid(id:string){
+    console.log(id)
+   this.router.navigate(["shops",id])
+  }
 }
 
   

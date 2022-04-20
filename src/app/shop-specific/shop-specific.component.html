@@ -1,231 +1,32 @@
-<p>shop-specific works!</p>
-<p>shop-specific works!</p>
-<p>shop-specific works!</p>
-<p>shop-specific works!</p>
-<!-- <section class="heading">
-    <h3>our shop</h3>
-    <p> <a href="home.html">home</a> </p>
-</section> -->
-
-<!-- <section class="category">
-
-    <h1 class="title"> <span>our categories</span> <a href="#">view all >></a> </h1>
-
-    <div class="box-container">
-
-        <a href="#" class="box">
-            <img src="../../assets/image/diwali.webp" alt="">
-            <h3>diwali pujan samagri</h3>
-        </a>
-
-        <a href="#" class="box">
-            <img src="../../assets/image/samagri.jpg" alt="">
-            <h3>Nawatri pujan </h3>
-        </a>
-
-        <a href="#" class="box">
-            <img src="../../assets/image/sut.jpeg" alt="">
-            <h3>General products</h3>
-        </a>
-
-        <a href="#" class="box">
-            <img src="../../assets/image/diwali2.jpg" alt="">
-            <h3>Satyanarayan</h3>
-        </a>
-
-        <a href="#" class="box">
-            <img src="../../assets/image/images6.jpeg" alt="">
-            <h3>Karwachoth</h3>
-        </a>
-
-    </div>
-
-</section> -->
-
+<app-header></app-header>
+<app-nav-links></app-nav-links>
 <section class="products">
 
     <h1 class="title"> <span>our products</span> <a href="#">view all >></a> </h1>
 
     <div class="box-container">
 
-        <div class="box">
+        <div class="box" *ngFor="let product of products">
             <div class="icons">
                 <a href="#" class="fas fa-shopping-cart"></a>
-                
+
             </div>
             <div class="image">
-                <img src="../../assets/image/agarbati2.jpg" alt="">
+                <img src={{product.image}} alt="">
             </div>
             <div class="content">
-                <div class="price">$140.00</div>
-                <h3>Agarbatti</h3>
+                <div class="price">PRICE {{product.price}} Only</div>
+                <h3>{{product.name}}</h3>
+                <span>QUANTITY {{product.stock}} </span>
                 <div class="stars">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="far fa-star"></i>
-                    <span> (50) </span>
                 </div>
             </div>
         </div>
-
-        <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-               
-            </div>
-            <div class="image">
-                <img src="../../assets/image/dupRose.jpeg" alt="">
-            </div>
-            <div class="content">
-                <div class="price">$140.00</div>
-                <h3>Dhup Batti</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <span> (50) </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-              
-            </div>
-            <div class="image">
-                <img src="../../assets/image/images6.jpeg" alt="">
-            </div>
-            <div class="content">
-                <div class="price">$140.00</div>
-                <h3>chunri</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <span> (50) </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-                
-            </div>
-            <div class="image">
-                <img src="../../assets/image/krishnaji2.jpeg" alt="">
-            </div>
-            <div class="content">
-                <div class="price">$140.00</div>
-                <h3>krishna dresses</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <span> (50) </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-             
-            </div>
-            <div class="image">
-                <img src="../../assets/image/index copy.jpeg" alt="">
-            </div>
-            <div class="content">
-                <div class="price">$140.00</div>
-                <h3>kum-kum</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <span> (50) </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-           
-            </div>
-            <div class="image">
-                <img src="../../assets/image/ash4.jpeg" alt="">
-            </div>
-            <div class="content">
-                <div class="price">$140.00</div>
-                <h3>Ashtagan</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <span> (50) </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-                
-            </div>
-            <div class="image">
-                <img src="../../assets/image/images6 copy.jpeg" alt="">
-            </div>
-            <div class="content">
-                <div class="price">$140.00</div>
-                <h3>kalash</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <span> (50) </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-              
-            </div>
-            <div class="image">
-                <img src="../../assets/image/images8.jpeg" alt="">
-            </div>
-            <div class="content">
-                <div class="price">$140.00</div>
-                <h3>fulbati</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <span> (50) </span>
-                </div>
-            </div>
-        </div>
-
     </div>
-
 </section>
-
-
+<app-footer></app-footer>

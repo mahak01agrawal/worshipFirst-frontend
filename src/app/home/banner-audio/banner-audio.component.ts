@@ -4,7 +4,7 @@ import { MediaFileService } from 'src/app/media-file.service';
 @Component({
   selector: 'app-banner-audio',
   templateUrl: './banner-audio.component.html',
-  styleUrls: ['./banner-audio.component.css']
+  styleUrls: ['./banner-audio.component.css'],
 })
 export class BannerAudioComponent implements OnInit {
   mediaFiles:any=[];
@@ -16,5 +16,4 @@ export class BannerAudioComponent implements OnInit {
   }
   ngOnInit(): void {
   }
-
 }
