@@ -1,34 +1,43 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {SocialAuthService,SocialUser, GoogleLoginProvider} from "angularx-social-login";
+import {
+  SocialAuthService,
+  SocialUser,
+  GoogleLoginProvider,
+} from 'angularx-social-login';
 import { PriestService } from '../priest.service';
 import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  user! : SocialUser;
-  email:string="";
-  password:string="";
-  constructor(private authService : SocialAuthService,private userService:UserService,private priest:PriestService,private router:Router) { }
-  flag:boolean = false;
+  user!: SocialUser;
+  email: string = '';
+  password: string = '';
+  constructor(
+    private authService: SocialAuthService,
+    private userService: UserService,
+    private priest: PriestService,
+    private router: Router
+  ) {}
+  flag: boolean = false;
   ngOnInit(): void {
-    this.authService.authState.subscribe((data:any)=>{
+    this.authService.authState.subscribe((data: any) => {
       this.user = data;
-      this.userService.socialLogin(this.user).subscribe(data=>{
+      this.userService.socialLogin(this.user).subscribe((data) => {
         console.log(data);
-        this.flag=true;
+        this.flag = true;
       });
-    })
+    });
   }
 
   socialLogin() {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
-  signOut(){
+  signOut() {
     this.authService.signOut();
   }
 
@@ -47,9 +56,7 @@ export class HeaderComponent implements OnInit {
     closer.style.display = 'block';
     login.classList.toggle('active');
   }
-  
 
-  
   closeBar() {
     let closer: any = document.querySelector('#closer');
     let nav: any = document.querySelector('#nav');
@@ -61,36 +68,34 @@ export class HeaderComponent implements OnInit {
     nav.classList.remove('active');
     cart.classList.remove('active');
     login.classList.remove('active');
-    
-
   }
-  searchBtn(search:any){
+  searchBtn(search: any) {
     search.classList.toggle('active');
   }
-  
-  loginAsUser(){
-    console.log(this.email+" "+this.password);
-    this.userService.userLogin(this.email,this.password).subscribe(data=>{
+
+  loginAsUser() {
+    console.log(this.email + ' ' + this.password);
+    this.userService.userLogin(this.email, this.password).subscribe((data) => {
       console.log(data);
-      localStorage.setItem("token",data.token);
+      localStorage.setItem('token', data.token);
     });
   }
 
-  loginAsPandit(){
-    this.priest.priestLogin(this.email,this.password).subscribe(data=>{
+  loginAsPandit() {
+    this.priest.priestLogin(this.email, this.password).subscribe((data) => {
       console.log(data);
-      localStorage.setItem("token",data.token);
+      localStorage.setItem('token', data.token);
       this.router.navigate(['priest']);
-    })
+    });
   }
 
-  isLoggedIn(){
-    if(this.priest.checkToken()){
+  isLoggedIn() {
+    if (this.priest.checkToken()) {
       return true;
     }
-      return false;
+    return false;
   }
-  signout(){
-    localStorage.removeItem("token");
+  signout() {
+    localStorage.removeItem('token');
   }
 }

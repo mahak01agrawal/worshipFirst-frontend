@@ -14,7 +14,7 @@
         <div id="search-btn" class="fas fa-search" (click)="searchBtn(search)"></div>
         <div id="cart-btn" class="fas fa-shopping-cart" (click)="showCart(cart)"></div>
         <div id="login-btn" class="fas fa-user" (click)="showLogin(login)"></div>
-     
+
     </div>
 
 </header>
@@ -32,7 +32,7 @@
     <a routerLink="/shop" (click)="closeBar()">shop</a>
     <a routerLink="/audio-video" (click)="closeBar()">Audio/Videos</a>
     <a routerLink="/about" (click)="closeBar()">about</a>
-    <a routerLink="/contact"  (click)="closeBar()">contact</a>
+    <a routerLink="/contact" (click)="closeBar()">contact</a>
 </nav>
 
 <!-- shopping cart  -->
@@ -94,10 +94,10 @@
 <div class="login-form" id="login" #login>
     <form action="" *ngIf="!isLoggedIn(); else elseBlock">
         <h3>login form</h3>
-        <input type="email" placeholder="enter your email" class="box" [(ngModel)] = "email" name="s">
-        <input type="password" placeholder="enter your password" class="box" [(ngModel)] = "password" name="d">
-        <input type="submit" value="login as user" class="btn" (click) = "loginAsUser()">
-        <p>login as user with :<a (click)="socialLogin()" >Google</a></p>
+        <input type="email" placeholder="enter your email" class="box" [(ngModel)]="email" name="s">
+        <input type="password" placeholder="enter your password" class="box" [(ngModel)]="password" name="d">
+        <input type="submit" value="login as user" class="btn" (click)="loginAsUser()">
+        <p>login as user with :<a (click)="socialLogin()">Google</a></p>
         <input type="submit" value="login as pandit ji" class="btn" (click)="loginAsPandit()">
         <p>forget password? <a href="#">click here</a></p>
         <p>don't have an account? <a href="#">create now</a></p>
@@ -108,16 +108,16 @@
 <!-- </div> -->
 <ng-template #elseBlock>
     <!-- <div class="user-profile" id="login" #login> -->
-        <div class="box">
-            <div class="dash">
+    <div class="box">
+        <div class="dash">
             <h3>user profile</h3>
-            <img src="../../assets/image/agarbati2.jpg"  alt="">
+            <img src="../../assets/image/agarbati2.jpg" alt="">
             <p>MAHAK AGRAWAL </p>
             <p><a href="#">Edit Profile</a></p>
             <p><a href="#">Order history</a></p>
             <p><a href="#">Remove account</a></p>
             <p><a href="#">Help</a></p>
-           <input type="submit" value="sign out" class="btn" (click)="signout()">
+            <input type="submit" value="sign out" class="btn" (click)="signout()">
         </div>
         <!-- </div> -->
     </div>
