@@ -92,7 +92,7 @@
 <!-- login form  -->
 <!-- <div > -->
 <div class="login-form" id="login" #login>
-    <form action="" *ngIf="!isLoggedIn(); else elseBlock">
+    <form action="" *ngIf="!userIsLoggedIn(); else elseBlock">
         <h3>login form</h3>
         <input type="email" placeholder="enter your email" class="box" [(ngModel)]="email" name="s">
         <input type="password" placeholder="enter your password" class="box" [(ngModel)]="password" name="d">
@@ -111,8 +111,8 @@
     <div class="box">
         <div class="dash">
             <h3>user profile</h3>
-            <img src="../../assets/image/agarbati2.jpg" alt="">
-            <p>MAHAK AGRAWAL </p>
+            <img src="{{userProfile.image}}" alt="">
+            <p>{{userProfile.name}}</p>
             <p><a href="#">Edit Profile</a></p>
             <p><a href="#">Order history</a></p>
             <p><a href="#">Remove account</a></p>

@@ -29,7 +29,6 @@ const routes: Routes = [
   ]},
   {path:'priest',component : PriestPageComponent},
   {path : "**", component : PageNotFountComponent}
-
 ];
 
 @NgModule({
