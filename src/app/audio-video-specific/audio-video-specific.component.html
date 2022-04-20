@@ -2,8 +2,6 @@
 <app-nav-links></app-nav-links>
 
 <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-
-
 <section class="heading">
     <h3>Audio/Videos</h3>
     
@@ -15,61 +13,19 @@
 
     <div class="box-container">
 
-        <a href="#" class="box" *ngFor="let aud of audios">
-            <!-- <div *ngIf="type(med.type)"> -->
+        <a href="{{aud.link}}" class="box" *ngFor="let aud of audios">
             <img src="{{aud.image}}" alt="">
             <h3>{{aud.name}}</h3>
-            <!-- </div> -->
         </a>
-
-        <!-- <a href="#" class="box">
-            <img src="{{../../assets/image/gayatri-mantra.jpg}}" alt="">
-            <h3>Shiv tandav</h3>
-        </a>
-
-        <a href="#" class="box">
-            <img src="../../assets/image/gayatri-mantra.jpg" alt="">
-            <h3>gayatri mantra</h3>
-        </a>
-
-        <a href="#" class="box">
-            <img src="../../assets/image/gayatri-mantra.jpg" alt="">
-            <h3>hey raam hey raam bhajan</h3>
-        </a>
-
-        <a href="#" class="box">
-            <img src="../../assets/image/gayatri-mantra.jpg" alt="">
-            <h3>ganpati strotram</h3>
-        </a> -->
-
-    </div>
-
+           </div>
 </section>
 
 <section class="videos">
-
     <h1 class="title"> <span>Videos</span> <a href="#">view all >></a> </h1>
-
     <div class="box-container">
-
-        <!-- <div class="box">
-            <div class="icons">
-              <a href="#" ><i class='bx bx-play-circle'></i></a>
-                
-            </div>
-            <div class="image">
-                <img src="../../assets/image/hindu-wedding-rituals.webp" alt="">
-            </div>
-            <div class="content">
-                
-                <h3>Shadi vidhi</h3>
-               
-            </div>
-        </div> -->
-        
         <div class="box" *ngFor="let vid of videos">
             <div class="icons">
-              <a href="#" ><i class='bx bx-play-circle'></i></a>
+              <a href="{{vid.link}}" ><i class='bx bx-play-circle'></i></a>
                 
             </div>
             <div class="image">
@@ -81,62 +37,6 @@
                
             </div>
         </div>
-        <!-- <div class="box">
-            <div class="icons">
-              <a href="#" ><i class='bx bx-play-circle'></i></a>
-                
-            </div>
-            <div class="image">
-                <img src="../../assets/image/" alt="">
-            </div>
-            <div class="content">
-                
-                <h3>ganesh pujan</h3>
-               
-            </div>
-        </div>
-        <div class="box">
-            <div class="icons">
-              <a href="#" ><i class='bx bx-play-circle'></i></a>
-                
-            </div>
-            <div class="image">
-                <img src="../../assets/image/diwalipujamain-ll.jpg" alt="">
-            </div>
-            <div class="content">
-                
-                <h3> diawali lakshmi pujan</h3>
-               
-            </div>
-        </div>
-        <div class="box">
-            <div class="icons">
-              <a href="#" ><i class='bx bx-play-circle'></i></a>
-                
-            </div>
-            <div class="image">
-                <img src="../../assets/image/shradhya-vidhi.jpg.crdownload" alt="">
-            </div>
-            <div class="content">
-                
-                <h3>Shradhya vidhi</h3>
-               
-            </div>
-        </div>
-        <div class="box">
-            <div class="icons">
-              <a href="#" ><i class='bx bx-play-circle'></i></a>
-                
-            </div>
-            <div class="image">
-                <img src="../../assets/image/gayatri_mantra.jpg" alt="">
-            </div>
-            <div class="content">
-                
-                <h3>gayatri mantra</h3>
-               
-            </div>
-        </div> -->
     </div>
 
 </section>

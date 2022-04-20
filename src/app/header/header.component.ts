@@ -25,13 +25,10 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.authService.authState.subscribe((data: any) => {
       this.user = data;
-
       this.userService.socialLogin(this.user).subscribe(data=>{
-        // console.log(data);
         this.flag=true;
         this.userProfile = data;
-        localStorage.setItem("token",data.token);
-
+        localStorage.setItem("user",JSON.stringify(data));
       });
     });
   }
@@ -80,25 +77,31 @@ export class HeaderComponent implements OnInit {
   loginAsUser(){
     console.log(this.email+" "+this.password);
     this.userService.userLogin(this.email,this.password).subscribe(data=>{
-      this.userProfile = data;
+      this.userProfile = data.result;
       console.log(data);
+      localStorage.setItem("user",JSON.stringify(data.result));
       localStorage.setItem('token', data.token);
     });
   }
 
   loginAsPandit() {
     this.priest.priestLogin(this.email, this.password).subscribe((data) => {
+      if(data.status == "success"){
       console.log(data);
       localStorage.setItem('token', data.token);
-      this.router.navigate(['priest']);
+      this.router.navigate(['priest'])
+      };
     });
   }
 
   userIsLoggedIn(){
-    if(this.userProfile){
-      
+    if(this.userService.checkUser()){
+      this.userProfile = JSON.parse(this.userService.checkUser()|| " ");
+      return true;
     }
+    return false;
   }
+
   isLoggedIn(){
     if(this.priest.checkToken()){
       return true;
@@ -107,5 +110,6 @@ export class HeaderComponent implements OnInit {
   }
   signout() {
     localStorage.removeItem('token');
+    localStorage.removeItem("user");
   }
 }

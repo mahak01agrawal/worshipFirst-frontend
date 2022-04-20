@@ -18,7 +18,6 @@ export class MainPartComponent implements OnInit {
       console.log(data);
       this.packageList = data;
     });
-
     category.View('product').subscribe((data) => {
       console.log(data);
       this.productList = data;
@@ -26,10 +25,6 @@ export class MainPartComponent implements OnInit {
   }
   
   ngOnInit(): void {}
-  shopid(id:string){
-    console.log(id)
-   this.router.navigate(["shops",id])
-  }
 }
 
   

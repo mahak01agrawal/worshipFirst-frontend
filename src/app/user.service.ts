@@ -22,4 +22,7 @@ export class UserService {
   checkToken():any{
     return localStorage.getItem("token");
   }
+  checkUser(){
+    return localStorage.getItem("user");
+  }
 }
