@@ -1,8 +1,6 @@
 <nav class="navbar text-white navbar-expand">
     <div class="container-nav">
-        
       <div class="nav">
-
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -51,8 +49,12 @@
              <li class="nav-item">
                 <a class="nav-link " href="#" >Photo Frames</a>
                </li>
+               <li class="nav-item" *ngFor="let cat of mediaCategories">
+                <a class="nav-link " routerLink="/audio-videos/{{cat._id}}" >{{cat.name}}</a>
+               </li>
 
-                 <li class="nav-item">
+
+                 <!-- <li class="nav-item">
                   <a class="nav-link " href="#" >Pujan vidhi videos</a>
                  </li>
                  <li class="nav-item dropdown">
@@ -64,14 +66,12 @@
                      <a class="dropdown-item" href="#">Audio </a>
                       <a class="dropdown-item" href="#">Video</a>
                     </div>
-                 </li>
+                 </li> -->
              </ul>
          </div>
        </div>
     </div>
 
 </nav>
-<!-- <app-home>
-</app-home> -->
 <router-outlet></router-outlet>
 

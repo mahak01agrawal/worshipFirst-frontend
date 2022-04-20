@@ -25,7 +25,7 @@ const routes: Routes = [
       {path:"about",component:AboutComponent},
       {path:"contact",component:ContactComponent},
       {path:"audio-video",component:AudioVideoGeneralComponent},
-      {path:"audio-videos",component:AudioVideoSpecificComponent},
+      {path:"audio-videos/:id",component:AudioVideoSpecificComponent},
       {path:"book-priest",component:BookPriestComponent}  
   ]},
   {path:'priest',component : PriestPageComponent},

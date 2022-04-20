@@ -15,13 +15,15 @@
 
     <div class="box-container">
 
-        <a href="#" class="box">
-            <img src="../../assets/image/gayatri-mantra.jpg" alt="">
-            <h3>Mrityunjay mantra</h3>
+        <a href="#" class="box" *ngFor="let aud of audios">
+            <!-- <div *ngIf="type(med.type)"> -->
+            <img src="{{aud.image}}" alt="">
+            <h3>{{aud.name}}</h3>
+            <!-- </div> -->
         </a>
 
-        <a href="#" class="box">
-            <img src="../../assets/image/gayatri-mantra.jpg" alt="">
+        <!-- <a href="#" class="box">
+            <img src="{{../../assets/image/gayatri-mantra.jpg}}" alt="">
             <h3>Shiv tandav</h3>
         </a>
 
@@ -38,7 +40,7 @@
         <a href="#" class="box">
             <img src="../../assets/image/gayatri-mantra.jpg" alt="">
             <h3>ganpati strotram</h3>
-        </a>
+        </a> -->
 
     </div>
 
@@ -50,7 +52,7 @@
 
     <div class="box-container">
 
-        <div class="box">
+        <!-- <div class="box">
             <div class="icons">
               <a href="#" ><i class='bx bx-play-circle'></i></a>
                 
@@ -63,23 +65,23 @@
                 <h3>Shadi vidhi</h3>
                
             </div>
-        </div>
+        </div> -->
         
-        <div class="box">
+        <div class="box" *ngFor="let vid of videos">
             <div class="icons">
               <a href="#" ><i class='bx bx-play-circle'></i></a>
                 
             </div>
             <div class="image">
-                <img src="../../assets/image/navratra_hawan_vidhi.jpg" alt="">
+                <img src="{{vid.image}}" alt="">
             </div>
             <div class="content">
                 
-                <h3>navratri hawan</h3>
+                <h3>{{vid.name}}</h3>
                
             </div>
         </div>
-        <div class="box">
+        <!-- <div class="box">
             <div class="icons">
               <a href="#" ><i class='bx bx-play-circle'></i></a>
                 
@@ -134,7 +136,7 @@
                 <h3>gayatri mantra</h3>
                
             </div>
-        </div>
+        </div> -->
     </div>
 
 </section>

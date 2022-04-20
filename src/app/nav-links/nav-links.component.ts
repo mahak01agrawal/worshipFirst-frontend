@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MediaFileService } from '../media-file.service';
 
 @Component({
   selector: 'app-nav-links',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-links.component.css']
 })
 export class NavLinksComponent implements OnInit {
-
-  constructor() { }
-
+  mediaCategories:any = [];
+  constructor(private media:MediaFileService) {
+    media.viewCategory().subscribe(data=>{
+      this.mediaCategories = data;
+    })
+   }
   ngOnInit(): void {
   }
-
 }

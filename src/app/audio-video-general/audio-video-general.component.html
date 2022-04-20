@@ -1,8 +1,6 @@
 <app-header></app-header>
 <app-nav-links></app-nav-links>
 <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-
-<p>audio-video-general works!</p>
 <section class="heading">
     <h3>Audio/Videos</h3>
     
@@ -10,33 +8,13 @@
 
 <section class="audio">
 
-    <h1 class="title"> <span>Audios</span> <a href="#">view all >></a> </h1>
+    <h1 class="title"> <span>Audios</span></h1>
 
     <div class="box-container">
 
-        <a href="#" class="box">
-            <img src="../../assets/image/gayatri-mantra.jpg" alt="">
-            <h3>Mrityunjay mantra</h3>
-        </a>
-
-        <a href="#" class="box">
-            <img src="../../assets/image/gayatri-mantra.jpg" alt="">
-            <h3>Shiv tandav</h3>
-        </a>
-
-        <a href="#" class="box">
-            <img src="../../assets/image/gayatri-mantra.jpg" alt="">
-            <h3>gayatri mantra</h3>
-        </a>
-
-        <a href="#" class="box">
-            <img src="../../assets/image/gayatri-mantra.jpg" alt="">
-            <h3>hey raam hey raam bhajan</h3>
-        </a>
-
-        <a href="#" class="box">
-            <img src="../../assets/image/gayatri-mantra.jpg" alt="">
-            <h3>ganpati strotram</h3>
+        <a href="{{aud.link}}" class="box"  *ngFor = "let aud of audios"   >
+            <img src="{{aud.image}}" alt="">
+            <h3>{{aud.name}}</h3>
         </a>
 
     </div>
@@ -45,26 +23,26 @@
 
 <section class="videos">
 
-    <h1 class="title"> <span>Videos</span> <a href="#">view all >></a> </h1>
+    <h1 class="title"> <span>Videos</span></h1>
 
     <div class="box-container">
 
-        <div class="box">
+        <div class="box" *ngFor = "let vid of videos">
             <div class="icons">
-              <a href="#" ><i class='bx bx-play-circle'></i></a>
+              <a href="{{vid.link}}" ><i class='bx bx-play-circle'></i></a>
                 
             </div>
             <div class="image">
-                <img src="../../assets/image/hindu-wedding-rituals.webp" alt="">
+                <img src="{{vid.image}}" alt="">
             </div>
             <div class="content">
                 
-                <h3>Shadi vidhi</h3>
+                <h3>{{vid.name}}</h3>
                
             </div>
         </div>
         
-        <div class="box">
+        <!-- <div class="box">
             <div class="icons">
               <a href="#" ><i class='bx bx-play-circle'></i></a>
                 
@@ -133,8 +111,8 @@
                 <h3>gayatri mantra</h3>
                
             </div>
-        </div>
-    </div>
+        </div>-->   
+    </div> 
 
 </section>
 <app-footer></app-footer>

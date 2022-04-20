@@ -13,14 +13,18 @@ export class HeaderComponent implements OnInit {
   user! : SocialUser;
   email:string="";
   password:string="";
+  userProfile:any;
+  panditProfile:any;
   constructor(private authService : SocialAuthService,private userService:UserService,private priest:PriestService,private router:Router) { }
   flag:boolean = false;
   ngOnInit(): void {
     this.authService.authState.subscribe((data:any)=>{
       this.user = data;
       this.userService.socialLogin(this.user).subscribe(data=>{
-        console.log(data);
+        // console.log(data);
         this.flag=true;
+        this.userProfile = data;
+        localStorage.setItem("token",data.token);
       });
     })
   }
@@ -29,6 +33,7 @@ export class HeaderComponent implements OnInit {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
   signOut(){
+    localStorage.removeItem("token");
     this.authService.signOut();
   }
 
@@ -47,9 +52,7 @@ export class HeaderComponent implements OnInit {
     closer.style.display = 'block';
     login.classList.toggle('active');
   }
-  
 
-  
   closeBar() {
     let closer: any = document.querySelector('#closer');
     let nav: any = document.querySelector('#nav');
@@ -61,8 +64,6 @@ export class HeaderComponent implements OnInit {
     nav.classList.remove('active');
     cart.classList.remove('active');
     login.classList.remove('active');
-    
-
   }
   searchBtn(search:any){
     search.classList.toggle('active');
@@ -71,6 +72,7 @@ export class HeaderComponent implements OnInit {
   loginAsUser(){
     console.log(this.email+" "+this.password);
     this.userService.userLogin(this.email,this.password).subscribe(data=>{
+      this.userProfile = data;
       console.log(data);
       localStorage.setItem("token",data.token);
     });
@@ -83,7 +85,11 @@ export class HeaderComponent implements OnInit {
       this.router.navigate(['priest']);
     })
   }
-
+  userIsLoggedIn(){
+    if(this.userProfile){
+      
+    }
+  }
   isLoggedIn(){
     if(this.priest.checkToken()){
       return true;

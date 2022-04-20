@@ -29,6 +29,7 @@ import { TokenIntercepterService } from './token-intercepter.service';
 import { UserDashBoardComponent } from './user-dash-board/user-dash-board.component';
 import { PriestPageComponent } from './priest-page/priest-page.component';
 import { BookPriestComponent } from './book-priest/book-priest.component';
+import { MediaFileService } from './media-file.service';
 
 
 @NgModule({
@@ -80,7 +81,8 @@ import { BookPriestComponent } from './book-priest/book-priest.component';
     provide:HTTP_INTERCEPTORS,
     useClass : TokenIntercepterService,
     multi : true
-  }
+  },
+  MediaFileService
 ],
   bootstrap: [AppComponent]
 })
