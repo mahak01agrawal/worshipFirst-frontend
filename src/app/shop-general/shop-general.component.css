@@ -1,4 +1,4 @@
-  
+/*   
 .category .box-container {
     display: -ms-grid;
     display: grid;
@@ -30,7 +30,7 @@
     font-size: 1.7rem;
     color: #ffa047;
   }
-  
+   */
   .products .box-container {
     display: -ms-grid;
     display: grid;
