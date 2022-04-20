@@ -12,9 +12,6 @@ export class AudioVideoSpecificComponent implements OnInit {
   audios:any=[];
   videos:any=[];
   constructor(private router:Router,private route:ActivatedRoute,private media:MediaFileService) { 
-  }
-
-  ngOnInit(): void {
     this.router.events.subscribe(event=>{
       this.id=this.route.snapshot.paramMap.get("id");
       if(event instanceof NavigationEnd){
@@ -33,6 +30,10 @@ export class AudioVideoSpecificComponent implements OnInit {
         })
       }
     });
+  }
+
+  ngOnInit(): void {
+    
   }
 
 }
