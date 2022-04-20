@@ -7,7 +7,7 @@ import { MediaFileService } from 'src/app/media-file.service';
   styleUrls: ['./banner-audio.component.css'],
 })
 export class BannerAudioComponent implements OnInit {
-  mediaFiles:any=[];
+  mediaFiles: any= [];
   constructor(private media:MediaFileService) { 
     media.viewMediaFile().subscribe(data=>{
       console.log(data);
