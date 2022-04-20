@@ -23,7 +23,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
-              pujan Samagri
+              General Samagri
             </a>
             <div *ngFor="let products of product">
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -43,10 +43,7 @@
                 </div>
              </li>
              
-             <li class="nav-item">
-                <a class="nav-link " href="#" >Photo Frames</a>
-               </li>
-               <li class="nav-item" *ngFor="let cat of mediaCategories">
+                <li class="nav-item" *ngFor="let cat of mediaCategories">
                 <a class="nav-link " routerLink="/audio-videos/{{cat._id}}" >{{cat.name}}</a>
                </li>
 
