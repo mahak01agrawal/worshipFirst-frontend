@@ -84,11 +84,10 @@ import { MediaFileService } from './media-file.service';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenIntercepterService,
-      multi: true,
+      multi: true
     },
-  ],
   MediaFileService
-],
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

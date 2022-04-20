@@ -24,4 +24,5 @@ export class NavLinksComponent implements OnInit {
    }
  package:any=[];
  product:any=[];
+ ngOnInit(){}
 }
