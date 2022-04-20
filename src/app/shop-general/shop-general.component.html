@@ -7,20 +7,20 @@
 
 <section class="products">
 
-    <h1 class="title"> <span>our packages</span> <a href="#">view products >></a> </h1>
+    <h1 class="title"> <span>our pacakes</span> <a href="#"></a> </h1>
 
     <div class="box-container">
 
-        <div class="box">
+        <div class="box" *ngFor="let pacake of pacakes">
             <div class="icons">
                 <a href="#" class="fas fa-shopping-cart"></a>
             </div>
             <div class="image">
-                <img src="../../assets/image/agarbati2.jpg" alt="">
+                <img src={{pacake.image}} alt="">
             </div>
             <div class="content">
                 <div class="price">$140.00</div>
-                <h3>Agarbatti</h3>
+                <h3>{{pacake.name}}</h3>
                 <div class="stars">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -31,17 +31,23 @@
                 </div>
             </div>
         </div>
+    </div>
+</section>
 
-        <div class="box">
+<section class="products">
+    <h1 class="title"> <span>our products</span> <a href="#"></a> </h1>
+    <div class="box-container">
+
+        <div class="box" *ngFor="let product of products">
             <div class="icons">
                 <a href="#" class="fas fa-shopping-cart"></a>
             </div>
             <div class="image">
-                <img src="../../assets/image/dupRose.jpeg" alt="">
+                <img src={{product.image}} alt="">
             </div>
             <div class="content">
                 <div class="price">$140.00</div>
-                <h3>Dhup Batti</h3>
+                <h3>{{product.name}}</h3>
                 <div class="stars">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -52,322 +58,9 @@
                 </div>
             </div>
         </div>
-
-        <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-                
-            </div>
-            <div class="image">
-                <img src="../../assets/image/images6.jpeg" alt="">
-            </div>
-            <div class="content">
-                <div class="price">$140.00</div>
-                <h3>chunri</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <span> (50) </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-            </div>
-            <div class="image">
-                <img src="../../assets/image/krishnaji2.jpeg" alt="">
-            </div>
-            <div class="content">
-                <div class="price">$140.00</div>
-                <h3>krishna dresses</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <span> (50) </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-                
-            </div>
-            <div class="image">
-                <img src="../../assets/image/index copy.jpeg" alt="">
-            </div>
-            <div class="content">
-                <div class="price">$140.00</div>
-                <h3>kum-kum</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <span> (50) </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-               
-            </div>
-            <div class="image">
-                <img src="../../assets/image/ash4.jpeg" alt="">
-            </div>
-            <div class="content">
-                <div class="price">$140.00</div>
-                <h3>Ashtagan</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <span> (50) </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-                
-            </div>
-            <div class="image">
-                <img src="../../assets/image/images6 copy.jpeg" alt="">
-            </div>
-            <div class="content">
-                <div class="price">$140.00</div>
-                <h3>kalash</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <span> (50) </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-                
-            </div>
-            <div class="image">
-                <img src="../../assets/image/images8.jpeg" alt="">
-            </div>
-            <div class="content">
-                <div class="price">$140.00</div>
-                <h3>fulbati</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <span> (50) </span>
-                </div>
-            </div>
-        </div>
-
     </div>
 
 </section>
 
-<section class="products" >
 
-    <h1 class="title"> <span>our products</span> <a href="#">view all >></a> </h1>
-
-    <div class="box-container">
-
-        <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-            </div>
-            <div class="image">
-                <img src="../../assets/image/agarbati2.jpg" alt="">
-            </div>
-            <div class="content">
-                <div class="price">$140.00</div>
-                <h3>Agarbatti</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <span> (50) </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-            </div>
-            <div class="image">
-                <img src="../../assets/image/dupRose.jpeg" alt="">
-            </div>
-            <div class="content">
-                <div class="price">$140.00</div>
-                <h3>Dhup Batti</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <span> (50) </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-                
-            </div>
-            <div class="image">
-                <img src="../../assets/image/images6.jpeg" alt="">
-            </div>
-            <div class="content">
-                <div class="price">$140.00</div>
-                <h3>chunri</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <span> (50) </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-            </div>
-            <div class="image">
-                <img src="../../assets/image/krishnaji2.jpeg" alt="">
-            </div>
-            <div class="content">
-                <div class="price">$140.00</div>
-                <h3>krishna dresses</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <span> (50) </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-                
-            </div>
-            <div class="image">
-                <img src="../../assets/image/index copy.jpeg" alt="">
-            </div>
-            <div class="content">
-                <div class="price">$140.00</div>
-                <h3>kum-kum</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <span> (50) </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-               
-            </div>
-            <div class="image">
-                <img src="../../assets/image/ash4.jpeg" alt="">
-            </div>
-            <div class="content">
-                <div class="price">$140.00</div>
-                <h3>Ashtagan</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <span> (50) </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-                
-            </div>
-            <div class="image">
-                <img src="../../assets/image/images6 copy.jpeg" alt="">
-            </div>
-            <div class="content">
-                <div class="price">$140.00</div>
-                <h3>kalash</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <span> (50) </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
-                
-            </div>
-            <div class="image">
-                <img src="../../assets/image/images8.jpeg" alt="">
-            </div>
-            <div class="content">
-                <div class="price">$140.00</div>
-                <h3>fulbati</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <span> (50) </span>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-</section>
 <app-footer></app-footer>
