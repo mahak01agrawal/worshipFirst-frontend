@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MediaFileService } from 'src/app/media-file.service';
 
 @Component({
   selector: 'app-banner-audio',
@@ -6,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./banner-audio.component.css'],
 })
 export class BannerAudioComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
+  mediaFiles:any=[];
+  constructor(private media:MediaFileService) { 
+    media.viewMediaFile().subscribe(data=>{
+      console.log(data);
+      this.mediaFiles = data;
+    })
+  }
+  ngOnInit(): void {
+  }
 }

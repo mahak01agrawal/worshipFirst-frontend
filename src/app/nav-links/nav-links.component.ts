@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MediaFileService } from '../media-file.service';
 import { CategoryService } from '../category.service';
 
 @Component({
@@ -7,9 +8,11 @@ import { CategoryService } from '../category.service';
   styleUrls: ['./nav-links.component.css']
 })
 export class NavLinksComponent implements OnInit {
- package:any=[];
- product:any=[];
-  constructor(private category:CategoryService) { 
+  mediaCategories:any = [];
+  constructor(private media:MediaFileService,private category:CategoryService) {
+    media.viewCategory().subscribe(data=>{
+      this.mediaCategories = data;
+    });
     category.View('package').subscribe((data) => {
       console.log(data);
       this.package = data;
@@ -18,9 +21,7 @@ export class NavLinksComponent implements OnInit {
       console.log(data);
       this.product = data;
     });
-  }
-
-  ngOnInit(): void {
-  }
-
+   }
+ package:any=[];
+ product:any=[];
 }

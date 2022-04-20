@@ -1,9 +1,8 @@
 <nav class="navbar text-white navbar-expand">
-  <div class="container-nav">
 
-    <div class="nav">
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    <div class="container-nav">
+      <div class="nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -44,29 +43,48 @@
             </div>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link " href="#">Photo Frames</a>
-          </li>
+                </div>
+             </li>
+             <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                 aria-haspopup="true" aria-expanded="false" >
+                 Book Priest
+                 </a>
+                <div class="dropdown-menu" style="font-size: large;" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" routerLink="book-priest">Genral pujan</a>
+                  <a class="dropdown-item" routerLink="book-priest">Shadi</a>
+                  <a class="dropdown-item" routerLink="book-priest">Shradhya</a>
+                </div>
+             </li>
+             
+             <li class="nav-item">
+                <a class="nav-link " href="#" >Photo Frames</a>
+               </li>
+               <li class="nav-item" *ngFor="let cat of mediaCategories">
+                <a class="nav-link " routerLink="/audio-videos/{{cat._id}}" >{{cat.name}}</a>
+               </li>
 
-          <li class="nav-item">
-            <a class="nav-link " href="#">Pujan vidhi videos</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              Bhajan/Shloks
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Audio </a>
-              <a class="dropdown-item" href="#">Video</a>
-            </div>
-          </li>
-        </ul>
-      </div>
+
+                 <!-- <li class="nav-item">
+                  <a class="nav-link " href="#" >Pujan vidhi videos</a>
+                 </li>
+                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                     aria-haspopup="true" aria-expanded="false" >
+                     Bhajan/Shloks
+                     </a>
+                    <div class="dropdown-menu"  aria-labelledby="navbarDropdown">
+                     <a class="dropdown-item" href="#">Audio </a>
+                      <a class="dropdown-item" href="#">Video</a>
+                    </div>
+                 </li> -->
+             </ul>
+         </div>
+       </div>
+
     </div>
   </div>
 
 </nav>
-<!-- <app-home>
-</app-home> -->
 <router-outlet></router-outlet>
+

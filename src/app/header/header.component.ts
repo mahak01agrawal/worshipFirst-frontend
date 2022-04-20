@@ -14,22 +14,24 @@ import { UserService } from '../user.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  user!: SocialUser;
-  email: string = '';
-  password: string = '';
-  constructor(
-    private authService: SocialAuthService,
-    private userService: UserService,
-    private priest: PriestService,
-    private router: Router
-  ) {}
-  flag: boolean = false;
+
+  user! : SocialUser;
+  email:string="";
+  password:string="";
+  userProfile:any;
+  panditProfile:any;
+  constructor(private authService : SocialAuthService,private userService:UserService,private priest:PriestService,private router:Router) { }
+  flag:boolean = false;
   ngOnInit(): void {
     this.authService.authState.subscribe((data: any) => {
       this.user = data;
-      this.userService.socialLogin(this.user).subscribe((data) => {
-        console.log(data);
-        this.flag = true;
+
+      this.userService.socialLogin(this.user).subscribe(data=>{
+        // console.log(data);
+        this.flag=true;
+        this.userProfile = data;
+        localStorage.setItem("token",data.token);
+
       });
     });
   }
@@ -37,7 +39,9 @@ export class HeaderComponent implements OnInit {
   socialLogin() {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
-  signOut() {
+
+  signOut(){
+    localStorage.removeItem("token");
     this.authService.signOut();
   }
 
@@ -72,10 +76,11 @@ export class HeaderComponent implements OnInit {
   searchBtn(search: any) {
     search.classList.toggle('active');
   }
-
-  loginAsUser() {
-    console.log(this.email + ' ' + this.password);
-    this.userService.userLogin(this.email, this.password).subscribe((data) => {
+  
+  loginAsUser(){
+    console.log(this.email+" "+this.password);
+    this.userService.userLogin(this.email,this.password).subscribe(data=>{
+      this.userProfile = data;
       console.log(data);
       localStorage.setItem('token', data.token);
     });
@@ -89,8 +94,13 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  isLoggedIn() {
-    if (this.priest.checkToken()) {
+  userIsLoggedIn(){
+    if(this.userProfile){
+      
+    }
+  }
+  isLoggedIn(){
+    if(this.priest.checkToken()){
       return true;
     }
     return false;

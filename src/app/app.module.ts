@@ -32,6 +32,7 @@ import { TokenIntercepterService } from './token-intercepter.service';
 import { UserDashBoardComponent } from './user-dash-board/user-dash-board.component';
 import { PriestPageComponent } from './priest-page/priest-page.component';
 import { BookPriestComponent } from './book-priest/book-priest.component';
+import { MediaFileService } from './media-file.service';
 
 @NgModule({
   declarations: [
@@ -86,6 +87,8 @@ import { BookPriestComponent } from './book-priest/book-priest.component';
       multi: true,
     },
   ],
+  MediaFileService
+],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
