@@ -18,7 +18,7 @@ const routes: Routes = [
     children:
     [
       {path: "",component: HomeComponent},
-      {path:"shops",component:ShopSpecificComponent},
+      {path:"shops/:id",component:ShopSpecificComponent},
       {path:"shop",component:ShopGeneralComponent},
       {path:"home",component:HomeComponent},
       {path:"about",component:AboutComponent},
