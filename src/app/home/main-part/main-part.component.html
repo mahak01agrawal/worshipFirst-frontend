@@ -3,14 +3,14 @@
     <span>Popular Packages</span>
 </section>
 <section class="banner-container">
-   
+
     <div class="banner" *ngFor=" let  package of packageList|slice:0:5">
-                    <img src={{package.image}} alt="">
-            <div class="content">
-                <span>limited offer</span>
-                <h3>upto 50% off</h3>
-                <a routerLink="shops" class="btn">Shop Now</a>
-            </div>
+        <img src={{package.image}} alt="">
+        <div class="content">
+            <span>limited offer</span>
+            <h3>upto 50% off</h3>
+            <a  class="btn" (click)="shopid(package._id)">Shop Now</a>
+        </div>
     </div>
 </section>
 
@@ -21,14 +21,14 @@
 
 
     <div class="banner" *ngFor="let product of productList | slice:0:5">
-            <img src={{product.image}} alt="">
-            <div class="content">
-                <span>limited offer</span>
-                <h3>upto 50% off</h3>
-                <a routerLink="shops" class="btn">Shop Now</a>
-            </div>
+        <img src={{product.image}} alt="">
+        <div class="content">
+            <span>limited offer</span>
+            <h3>upto 50% off</h3>
+            <a (click)="shopid(product._id)" class="btn">Shop Now</a>
+        </div>
     </div>
-   
+
 </section>
 
 <!-- banner section ends -->
