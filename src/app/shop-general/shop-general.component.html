@@ -7,8 +7,9 @@
     <h1 class="title"> <span>our pacakes</span> <a href="#"></a> </h1>
     <div class="box-container">
         <div class="box" *ngFor="let pacake of pacakes">
+            <!-- <div> -->
             <div class="icons">
-                <a (click)="addToCart(pacake._id)" class="fas fa-shopping-cart"></a>
+                <a  (click)="addToCart(pacake._id)" id="{{pacake._id}}" #{{pacake._id}} [ngClass]="add2Cart"></a>
             </div>
             <div class="image">
                 <img src={{pacake.image}} alt="">
@@ -26,7 +27,8 @@
                 </div>
             </div>
         </div>
-    </div>
+        </div>
+    <!-- </div> -->
 </section>
 
 <section class="products">
@@ -34,7 +36,7 @@
     <div class="box-container">
         <div class="box" *ngFor="let product of products">
             <div class="icons">
-                <a (click)="addToCart(product._id)" class="fas fa-shopping-cart"></a>
+                <a (click)="addToCart(product._id)" [ngClass]="add2Cart"></a>
             </div>
             <div class="image">
                 <img src={{product.image}} alt="">

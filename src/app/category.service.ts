@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CategoryService {
   constructor(private http: HttpClient) {}
-  viewAll='https://worship-first.herokuapp.com/product-category/view';
+  viewAll='https://worship-first-by-tech-priest.herokuapp.com/product-category/view';
   view =
     'https://worship-first.herokuapp.com/product-category/view-product-category';
   public View(type: string): Observable<any> {

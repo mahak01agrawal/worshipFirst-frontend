@@ -94,7 +94,6 @@ export class HeaderComponent implements OnInit {
   }
   
   loginAsUser(){
-    console.log(this.email+" "+this.password);
     this.userService.userLogin(this.email,this.password).subscribe(data=>{
       this.userProfile = data.result;
       localStorage.setItem("user",JSON.stringify(data.result));
