@@ -24,16 +24,35 @@ export class ShopGeneralComponent implements OnInit {
     });
   }
 
+  add2Cart = "fas fa-shopping-cart";
   addToCart(id:string){
     if(this.user.checkUser()){
       this.cart.addToCart(id).subscribe(data=>{
         localStorage.setItem("cart",JSON.stringify(data));
+        let pid = document.getElementById(id);
+        let appliedClassList = pid?.classList;
+        appliedClassList?.remove("fa-shopping-cart");
+        appliedClassList?.add("fa-times");
       });
     }
     else{
       alert("Please Login First");
     }
   }
-
   ngOnInit(): void {}
+
+  // checkProduct(proId:string){
+  //   // return true;
+  //   this.cart.viewCart().subscribe(data=>{
+  //     for(let element of data.productList){
+  //       if(element._id == proId){
+  //         let appliedClassList = document.getElementById(proId)?.classList;        
+  //         appliedClassList?.remove("fa-shopping-cart");
+  //         appliedClassList?.add("fa-times");
+  //         console.log("skdjhf");
+  //       }
+  //     }
+  //   })
+  //   // if(proId==)
+  // }
 }

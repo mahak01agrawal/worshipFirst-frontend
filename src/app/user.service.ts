@@ -10,12 +10,12 @@ export class UserService {
 
   constructor(private http:HttpClient) { }
   socialLogin(user:SocialUser):Observable<any>{
-    let socialApi = "https://worship-first.herokuapp.com/user/login-by-social-media";
+    let socialApi = "https://worship-first-by-tech-priest.herokuapp.com/user/login-by-social-media";
     return this.http.post(socialApi,{name : user.name,email : user.email,image : user.photoUrl})
   }
 
   userLogin(email:string,password:string):Observable<any>{
-    let userLoginApi = "https://worship-first.herokuapp.com/user/login";
+    let userLoginApi = "https://worship-first-by-tech-priest.herokuapp.com/user/login";
     return this.http.post(userLoginApi,{email:email,password:password});
   }
 
