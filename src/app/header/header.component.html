@@ -36,53 +36,18 @@
 </nav>
 
 <!-- shopping cart  -->
+<!-- <div *ngFor="let pro of cart"> -->
 
 <div class="shopping-cart" id="cart" #cart>
 
-    <div class="box">
-        <i class="fas fa-times"></i>
-        <img src="#" alt="">
+    <div class="box" *ngFor="let pro of cartList">
+        <i class="fas fa-times" (click)="removeFormCart(pro._id)"></i>
+        <img src="{{pro.image}}" alt="">
         <div class="content">
-            <h3>Kalash</h3>
-            <span class="quantity"> 1 </span>
-            <span class="multiply"> x </span>
-            <span class="price"> $140.00 </span>
+            <h3>{{pro.name}}</h3>
+            <span class="price"> {{pro.price}}</span>
         </div>
     </div>
-
-    <div class="box">
-        <i class="fas fa-times"></i>
-        <img src="#" alt="">
-        <div class="content">
-            <h3>Kalash</h3>
-            <span class="quantity"> 1 </span>
-            <span class="multiply"> x </span>
-            <span class="price"> $140.00 </span>
-        </div>
-    </div>
-
-    <div class="box">
-        <i class="fas fa-times"></i>
-        <img src="#" alt="">
-        <div class="content">
-            <h3>Kalash</h3>
-            <span class="quantity"> 1 </span>
-            <span class="multiply"> x </span>
-            <span class="price"> $140.00 </span>
-        </div>
-    </div>
-
-    <div class="box">
-        <i class="fas fa-times"></i>
-        <img src="#" alt="">
-        <div class="content">
-            <h3>Kalash</h3>
-            <span class="quantity"> 1 </span>
-            <span class="multiply"> x </span>
-            <span class="price"> $140.00 </span>
-        </div>
-    </div>
-
     <h3 class="total"> total : <span>$560.00</span> </h3>
 
     <a href="#" class="btn">checkout cart</a>
@@ -122,6 +87,7 @@
         <!-- </div> -->
     </div>
 </ng-template>
+<!-- {{cartList}} -->
 <!-- <app-home></app-home> -->
 <router-outlet></router-outlet>
 <!-- <router-outlet></router-outlet> -->

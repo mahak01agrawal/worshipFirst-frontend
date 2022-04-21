@@ -2,7 +2,7 @@
     <span>Audio/video</span>
 </section>
 <section class="banner-container">
-    <div class="banner" *ngFor = "let file of mediaFiles">
+    <div class="banner" *ngFor = "let file of mediaFiles | slice:0:3">
         <img src="{{file.image}}" alt="">
         <div class="content">
             <a href="{{file.link}}" class="btn">Play Now</a>

@@ -5,6 +5,7 @@ import {
   SocialUser,
   GoogleLoginProvider,
 } from 'angularx-social-login';
+import { CartService } from '../cart.service';
 import { PriestService } from '../priest.service';
 import { UserService } from '../user.service';
 
@@ -20,17 +21,34 @@ export class HeaderComponent implements OnInit {
   password:string="";
   userProfile:any;
   panditProfile:any;
-  constructor(private authService : SocialAuthService,private userService:UserService,private priest:PriestService,private router:Router) { }
-  flag:boolean = false;
+  cartList:any;
+  constructor(private authService : SocialAuthService,private userService:UserService,private priest:PriestService,private router:Router,private cartService:CartService) {
+    // this.cart = JSON.parse(localStorage.getItem("cart") || "");
+    this.cartService.viewCart().subscribe(data=>{
+      this.cartList = data.productList;
+    })
+   }
+   hello(){
+    this.cartService.viewCart().subscribe(data=>{
+      this.cartList = data.productList;
+    })
+   }
   ngOnInit(): void {
     this.authService.authState.subscribe((data: any) => {
       this.user = data;
       this.userService.socialLogin(this.user).subscribe(data=>{
-        this.flag=true;
         this.userProfile = data;
-        localStorage.setItem("user",JSON.stringify(data));
+        localStorage.setItem("token",data.token);
+        localStorage.setItem("user",JSON.stringify(data.user));
       });
     });
+  }
+
+  removeFormCart(pid:string){
+    this.cartService.removeFromCart(pid).subscribe(data=>{
+      console.log(data);
+      this.hello();
+    }) 
   }
 
   socialLogin() {
@@ -51,6 +69,7 @@ export class HeaderComponent implements OnInit {
     let closer: any = document.querySelector('#closer');
     closer.style.display = 'block';
     cart.classList.toggle('active');
+    this.hello();
   }
   showLogin(login: any) {
     let closer: any = document.querySelector('#closer');
@@ -78,7 +97,6 @@ export class HeaderComponent implements OnInit {
     console.log(this.email+" "+this.password);
     this.userService.userLogin(this.email,this.password).subscribe(data=>{
       this.userProfile = data.result;
-      console.log(data);
       localStorage.setItem("user",JSON.stringify(data.result));
       localStorage.setItem('token', data.token);
     });
@@ -87,7 +105,6 @@ export class HeaderComponent implements OnInit {
   loginAsPandit() {
     this.priest.priestLogin(this.email, this.password).subscribe((data) => {
       if(data.status == "success"){
-      console.log(data);
       localStorage.setItem('token', data.token);
       this.router.navigate(['priest'])
       };
