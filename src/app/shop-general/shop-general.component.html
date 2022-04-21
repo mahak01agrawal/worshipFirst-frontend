@@ -2,24 +2,19 @@
 <app-nav-links></app-nav-links>
 <section class="heading">
     <h3>our shop</h3>
-
 </section>
-
 <section class="products">
-
     <h1 class="title"> <span>our pacakes</span> <a href="#"></a> </h1>
-
     <div class="box-container">
-
         <div class="box" *ngFor="let pacake of pacakes">
             <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
+                <a (click)="addToCart(pacake._id)" class="fas fa-shopping-cart"></a>
             </div>
             <div class="image">
                 <img src={{pacake.image}} alt="">
             </div>
             <div class="content">
-                <div class="price">$140.00</div>
+                <div class="price">₹ {{pacake.price}}</div>
                 <h3>{{pacake.name}}</h3>
                 <div class="stars">
                     <i class="fas fa-star"></i>
@@ -37,16 +32,15 @@
 <section class="products">
     <h1 class="title"> <span>our products</span> <a href="#"></a> </h1>
     <div class="box-container">
-
         <div class="box" *ngFor="let product of products">
             <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
+                <a (click)="addToCart(product._id)" class="fas fa-shopping-cart"></a>
             </div>
             <div class="image">
                 <img src={{product.image}} alt="">
             </div>
             <div class="content">
-                <div class="price">$140.00</div>
+                <div class="price">₹{{product.price}}</div>
                 <h3>{{product.name}}</h3>
                 <div class="stars">
                     <i class="fas fa-star"></i>
@@ -59,8 +53,5 @@
             </div>
         </div>
     </div>
-
 </section>
-
-
 <app-footer></app-footer>

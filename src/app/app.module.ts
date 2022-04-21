@@ -33,6 +33,7 @@ import { UserDashBoardComponent } from './user-dash-board/user-dash-board.compon
 import { PriestPageComponent } from './priest-page/priest-page.component';
 import { BookPriestComponent } from './book-priest/book-priest.component';
 import { MediaFileService } from './media-file.service';
+import { CartService } from './cart.service';
 
 @NgModule({
   declarations: [
@@ -86,7 +87,7 @@ import { MediaFileService } from './media-file.service';
       useClass: TokenIntercepterService,
       multi: true
     },
-  MediaFileService
+  MediaFileService,CartService
   ],
   bootstrap: [AppComponent],
 })

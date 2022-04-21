@@ -15,4 +15,7 @@ export class PriestService {
   checkToken():any{
     return localStorage.getItem("token");
   }
+  checkUser(){
+    
+  }
 }
