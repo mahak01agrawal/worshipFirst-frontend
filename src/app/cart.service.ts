@@ -23,9 +23,9 @@ export class CartService {
     return this.http.get(api);
   }
   removeFromCart(pid:string){
-    let cartId = JSON.parse(localStorage.getItem("cart") || " ");
-    cartId = cartId._id;
-    let api = "https://worship-first-by-tech-priest.herokuapp.com/cart/delete/" +cartId+"/"+pid ;
-    return this.http.post(api,{});
+    let userId = JSON.parse(localStorage.getItem("user") || " ");
+    userId = userId._id;
+    let api = "https://worship-first-by-tech-priest.herokuapp.com/cart/delete-product/" +userId+"/"+pid ;
+    return this.http.delete(api);
   }
 }

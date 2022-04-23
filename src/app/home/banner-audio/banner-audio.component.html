@@ -5,7 +5,7 @@
     <div class="banner" *ngFor = "let file of mediaFiles | slice:0:3">
         <img src="{{file.image}}" alt="">
         <div class="content">
-            <a href="{{file.link}}" class="btn">Play Now</a>
+            <a href="{{file.link}}" target="blank" class="btn">Play Now</a>
         </div>
     </div>
 </section>

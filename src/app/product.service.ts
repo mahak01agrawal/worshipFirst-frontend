@@ -15,4 +15,9 @@ export class ProductService {
   public allProduct():Observable<any>{
   return this.http.get(this.viewAll);
   }
+
+  public searchProduct(word:string){
+    let api = "https://worship-first-by-tech-priest.herokuapp.com/product/search";
+    return this.http.post(api,{keywords:word});
+  }
 }
