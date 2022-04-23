@@ -25,6 +25,12 @@ export class PlaceOrderComponent implements OnInit {
    address?:string;
 
    payment(){
+
+    this.cartService.deleteCart().subscribe(data=>{
+      console.log("cart deleted");
+      console.log(data);
+    })
+
      let producList=[];
      for(let element of this.cartData){
        producList.push({product:element._id,totalPrice:element.price,qty:1});
@@ -36,10 +42,10 @@ export class PlaceOrderComponent implements OnInit {
        address : this.address,
        mobile:this.mobile
      }
-    this.paymentService.createOrder(order).subscribe(data=>{
-      console.log(data);
-      console.log(data.id);
 
+    
+    this.paymentService.createOrder(order).subscribe(data=>{
+    
       var options = {
         "key": "rzp_test_NPr7p2g2REFz6n", // Enter the Key ID generated from the Dashboard
         "amount": this.totalPrice+'00', // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
@@ -63,7 +69,9 @@ export class PlaceOrderComponent implements OnInit {
     }
     var rzp1 = new Razorpay(options);
     rzp1.open();
+    
     });
+
    }
 
   ngOnInit(): void {
