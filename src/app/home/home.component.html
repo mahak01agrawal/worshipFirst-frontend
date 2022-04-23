@@ -1,4 +1,97 @@
-<app-header></app-header>
+<!-- <app-header></app-header> -->
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="home.html" class="logo"><img src="../assets/image/logo3-removebg.png" alt=""> WorshipFirst</a>
+
+    <form class="search-form">
+        <input [(ngModel)] = "words" (click)="searchProduct()" name="a" placeholder="search here..." id="search-box">
+        <a><label for="search-box" class="fas fa-search"></label></a>
+    </form>
+
+    <div class="icons">
+        <div id="menu-btn" class="fas fa-bars" (click)="navLinks(nav)"></div>
+        <div id="search-btn" class="fas fa-search" ></div>
+        <div id="cart-btn" class="fas fa-shopping-cart" (click)="showCart(cart)"></div>
+        <div id="login-btn" class="fas fa-user" (click)="showLogin(login)"></div>
+
+    </div>
+
+</header>
+
+<!-- header section ends  -->
+
+<!-- closer btn  -->
+
+<div id="closer" #closer class="fas fa-times" (click)="closeBar()"></div>
+
+<!-- navbar  -->
+
+<nav class="navbar-main" id="nav" #nav>
+    <a routerLink="" (click)="closeBar()">home</a>
+    <a routerLink="/shop" (click)="closeBar()">shop</a>
+    <a routerLink="/audio-video" (click)="closeBar()">Audio/Videos</a>
+    <a routerLink="/about" (click)="closeBar()">about</a>
+    <a routerLink="/contact" (click)="closeBar()">contact</a>
+</nav>
+
+<!-- shopping cart  -->
+<!-- <div *ngFor="let pro of cart"> -->
+
+<div class="shopping-cart" id="cart" #cart>
+
+    <div class="box" *ngFor="let pro of cartList">
+        <i class="fas fa-times" (click)="removeFormCart(pro._id)"></i>
+        <img src="{{pro.image}}" alt="">
+        <div class="content">
+            <h3>{{pro.name}}</h3>
+            <span class="price"> {{pro.price}}</span>
+        </div>
+    </div>
+    <h3 class="total"> total : <span>{{totalPrice}}</span> </h3>
+
+    <a (click)="checkout()" class="btn">checkout cart</a>
+
+</div>
+
+<!-- login form  -->
+<!-- <div > -->
+<div class="login-form" id="login" #login>
+    <form action="" *ngIf="!userIsLoggedIn(); else elseBlock">
+        <h3>login form</h3>
+        <input type="email" placeholder="enter your email" class="box" [(ngModel)]="email" name="s">
+        <input type="password" placeholder="enter your password" class="box" [(ngModel)]="password" name="d">
+        <input type="submit" value="login as user" class="btn" (click)="loginAsUser()">
+        <p>login as user with :<a (click)="socialLogin()">Google</a></p>
+        <input type="submit" value="login as pandit ji" class="btn" (click)="loginAsPandit()">
+        <p>forget password? <a href="#">click here</a></p>
+        <p>don't have an account? <a href="#">create now</a></p>
+        <p>Register As Pandit ji :<a href="#"> Register</a></p>
+    </form>
+</div>
+
+<!-- </div> -->
+<ng-template #elseBlock>
+    <!-- <div class="user-profile" id="login" #login> -->
+    <div class="box">
+        <div class="dash">
+            <h3>user profile</h3>
+            <img src="{{userProfile.image}}" alt="">
+            <p>{{userProfile.name}}</p>
+            <p><a href="#">Edit Profile</a></p>
+            <p><a href="#">Order history</a></p>
+            <p><a href="#">Remove account</a></p>
+            <p><a href="#">Help</a></p>
+            <input type="submit" value="sign out" class="btn" (click)="signout()">
+        </div>
+        <!-- </div> -->
+    </div>
+</ng-template>
+<!-- {{cartList}} -->
+<!-- <app-home></app-home> -->
+<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
 <app-nav-links></app-nav-links>
 <app-img-slider></app-img-slider>
 <app-main-part></app-main-part>

@@ -11,29 +11,50 @@ import { UserService } from '../user.service';
 export class ShopGeneralComponent implements OnInit {
   pacakes:any = [];
   products:any = [];
+  cartData:any = [];
   constructor(private product: ProductService,private user:UserService,private cart:CartService) {
     this.product.allProduct().subscribe((data) => {
-      console.log(data);
       for(let element of data){
-        if(element.category.type=='product')
+        try{
+          if(element.category.type=='product'){
             this.products.push(element);
-      else{
-      this.pacakes.push(element);
+        }
+        else{
+        this.pacakes.push(element);
       }
     }
+    catch(err){
+    }
+        
+    }
     });
+
+    cart.viewCart().subscribe(data=>{
+      this.cartData = data;
+    })
   }
 
   add2Cart = "fas fa-shopping-cart";
   addToCart(id:string){
+    
     if(this.user.checkUser()){
-      this.cart.addToCart(id).subscribe(data=>{
-        localStorage.setItem("cart",JSON.stringify(data));
-        let pid = document.getElementById(id);
-        let appliedClassList = pid?.classList;
-        appliedClassList?.remove("fa-shopping-cart");
-        appliedClassList?.add("fa-times");
-      });
+      let pid = document.getElementById(id);
+      let appliedClassList = <any>pid?.classList;
+      console.log(appliedClassList);
+      if(appliedClassList[1]=='fa-shopping-cart'){
+        this.cart.addToCart(id).subscribe(data=>{
+          appliedClassList?.remove("fa-shopping-cart");
+          appliedClassList?.add("fa-times");
+        });  
+      }
+      else{
+        this.cart.removeFromCart(id).subscribe(data=>{
+          appliedClassList?.remove("fa-times");
+          appliedClassList?.add("fa-shopping-cart");
+          console.log(data);
+        })
+      }
+      
     }
     else{
       alert("Please Login First");
@@ -41,18 +62,15 @@ export class ShopGeneralComponent implements OnInit {
   }
   ngOnInit(): void {}
 
-  // checkProduct(proId:string){
-  //   // return true;
-  //   this.cart.viewCart().subscribe(data=>{
-  //     for(let element of data.productList){
-  //       if(element._id == proId){
-  //         let appliedClassList = document.getElementById(proId)?.classList;        
-  //         appliedClassList?.remove("fa-shopping-cart");
-  //         appliedClassList?.add("fa-times");
-  //         console.log("skdjhf");
-  //       }
-  //     }
-  //   })
-  //   // if(proId==)
-  // }
+  checkProduct(proId:string){
+      for(let element of this.cartData.productList){
+        if(element._id == proId){
+          let appliedClassList = document.getElementById(proId)?.classList;        
+          appliedClassList?.remove("fa-shopping-cart");
+          appliedClassList?.add("fa-times");
+          console.log("props");
+        }
+      }
+      return true;
+  }
 }

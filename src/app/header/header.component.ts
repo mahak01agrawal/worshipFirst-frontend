@@ -7,6 +7,7 @@ import {
 } from 'angularx-social-login';
 import { CartService } from '../cart.service';
 import { PriestService } from '../priest.service';
+import { ProductService } from '../product.service';
 import { UserService } from '../user.service';
 
 @Component({
@@ -22,15 +23,18 @@ export class HeaderComponent implements OnInit {
   userProfile:any;
   panditProfile:any;
   cartList:any;
-  constructor(private authService : SocialAuthService,private userService:UserService,private priest:PriestService,private router:Router,private cartService:CartService) {
+  constructor(private authService : SocialAuthService,private userService:UserService,private priest:PriestService,private router:Router,private cartService:CartService, private productService:ProductService) {
     // this.cart = JSON.parse(localStorage.getItem("cart") || "");
-    this.cartService.viewCart().subscribe(data=>{
-      this.cartList = data.productList;
-    })
+    this.hello();
    }
+   totalPrice?:number=10;
    hello(){
     this.cartService.viewCart().subscribe(data=>{
       this.cartList = data.productList;
+      this.totalPrice = 0;
+      for(let element of this.cartList){
+        this.totalPrice += element.price;
+      }
     })
    }
   ngOnInit(): void {
@@ -89,9 +93,9 @@ export class HeaderComponent implements OnInit {
     cart.classList.remove('active');
     login.classList.remove('active');
   }
-  searchBtn(search: any) {
-    search.classList.toggle('active');
-  }
+  // searchBtn(search: any) {
+  //   search.classList.toggle('active');
+  // }
   
   loginAsUser(){
     this.userService.userLogin(this.email,this.password).subscribe(data=>{
@@ -127,5 +131,15 @@ export class HeaderComponent implements OnInit {
   signout() {
     localStorage.removeItem('token');
     localStorage.removeItem("user");
+  }
+
+  words:string="";
+  searchProduct(event:any){
+    let val = event.target.value;
+    this.router.navigate(["shops",val]);
+  }
+
+  checkout(){
+    this.router.navigate(["place-order"]);
   }
 }

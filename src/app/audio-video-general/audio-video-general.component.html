@@ -12,7 +12,7 @@
 
     <div class="box-container">
 
-        <a href="{{aud.link}}" class="box"  *ngFor = "let aud of audios"   >
+        <a href="{{aud.link}}" target="blank" class="box"  *ngFor = "let aud of audios"   >
             <img src="{{aud.image}}" alt="">
             <h3>{{aud.name}}</h3>
         </a>
@@ -29,7 +29,7 @@
 
         <div class="box" *ngFor = "let vid of videos">
             <div class="icons">
-              <a href="{{vid.link}}" ><i class='bx bx-play-circle'></i></a>
+              <a href="{{vid.link}}" target="blank"><i class='bx bx-play-circle'></i></a>
 
             </div>
             <div class="image">

@@ -7,6 +7,7 @@ import { BookPriestComponent } from './book-priest/book-priest.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFountComponent } from './page-not-fount/page-not-fount.component';
+import { PlaceOrderComponent } from './place-order/place-order.component';
 import { PriestPageComponent } from './priest-page/priest-page.component';
 import { ShopGeneralComponent } from './shop-general/shop-general.component';
 import { ShopSpecificComponent } from './shop-specific/shop-specific.component';
@@ -25,7 +26,8 @@ const routes: Routes = [
       {path:"contact",component:ContactComponent},
       {path:"audio-video",component:AudioVideoGeneralComponent},
       {path:"audio-videos/:id",component:AudioVideoSpecificComponent},
-      {path:"book-priest",component:BookPriestComponent}  
+      {path:"book-priest",component:BookPriestComponent},
+      {path : "place-order",component : PlaceOrderComponent}  
   ]},
   {path:'priest',component : PriestPageComponent},
   {path : "**", component : PageNotFountComponent}

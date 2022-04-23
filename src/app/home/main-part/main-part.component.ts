@@ -23,6 +23,8 @@ export class MainPartComponent implements OnInit {
       this.productList = data;
     });
   }
+
+  
   
   ngOnInit(): void {}
 }

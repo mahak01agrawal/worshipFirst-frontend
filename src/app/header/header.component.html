@@ -4,14 +4,14 @@
 
     <a href="home.html" class="logo"><img src="../assets/image/logo3-removebg.png" alt=""> WorshipFirst</a>
 
-    <form action="" class="search-form" id="search" #search>
-        <input type="search" placeholder="search here..." id="search-box">
-        <label for="search-box" class="fas fa-search"></label>
+    <form class="search-form">
+        <input [(ngModel)] = "words" (keyup)="searchProduct($event)" name="a" placeholder="search here..." id="search-box" >
+        <a ><label for="search-box" class="fas fa-search"></label></a>
     </form>
 
     <div class="icons">
         <div id="menu-btn" class="fas fa-bars" (click)="navLinks(nav)"></div>
-        <div id="search-btn" class="fas fa-search" (click)="searchBtn(search)"></div>
+        <div id="search-btn" class="fas fa-search" ></div>
         <div id="cart-btn" class="fas fa-shopping-cart" (click)="showCart(cart)"></div>
         <div id="login-btn" class="fas fa-user" (click)="showLogin(login)"></div>
 
@@ -48,9 +48,9 @@
             <span class="price"> {{pro.price}}</span>
         </div>
     </div>
-    <h3 class="total"> total : <span>$560.00</span> </h3>
+    <h3 class="total"> total : <span>{{totalPrice}}</span> </h3>
 
-    <a href="#" class="btn">checkout cart</a>
+    <a (click)="checkout()" class="btn">checkout cart</a>
 
 </div>
 

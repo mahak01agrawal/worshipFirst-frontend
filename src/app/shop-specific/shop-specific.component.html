@@ -8,7 +8,7 @@
 
         <div class="box" *ngFor="let product of products">
             <div class="icons">
-                <a (click)="addToCart(product._id)" class="fas fa-shopping-cart"></a>
+                <a *ngIf = "checkProduct(product._id)" (click)="addToCart(product._id)" id="{{product._id}}" #{{pacake._id}} [ngClass]="add2Cart"></a>
 
             </div>
             <div class="image">
