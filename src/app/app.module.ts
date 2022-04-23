@@ -35,6 +35,8 @@ import { BookPriestComponent } from './book-priest/book-priest.component';
 import { MediaFileService } from './media-file.service';
 import { CartService } from './cart.service';
 import { PlaceOrderComponent } from './place-order/place-order.component';
+import { SignUpUserComponent } from './sign-up-user/sign-up-user.component';
+import { RegisterPriestComponent } from './register-priest/register-priest.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +60,8 @@ import { PlaceOrderComponent } from './place-order/place-order.component';
     PriestPageComponent,
     BookPriestComponent,
     PlaceOrderComponent,
+    SignUpUserComponent,
+    RegisterPriestComponent,
   ],
   imports: [
     BrowserModule,

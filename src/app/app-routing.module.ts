@@ -9,8 +9,10 @@ import { HomeComponent } from './home/home.component';
 import { PageNotFountComponent } from './page-not-fount/page-not-fount.component';
 import { PlaceOrderComponent } from './place-order/place-order.component';
 import { PriestPageComponent } from './priest-page/priest-page.component';
+import { RegisterPriestComponent } from './register-priest/register-priest.component';
 import { ShopGeneralComponent } from './shop-general/shop-general.component';
 import { ShopSpecificComponent } from './shop-specific/shop-specific.component';
+import { SignUpUserComponent } from './sign-up-user/sign-up-user.component';
 import { UserDashBoardComponent } from './user-dash-board/user-dash-board.component';
 
 const routes: Routes = [
@@ -30,6 +32,8 @@ const routes: Routes = [
       {path : "place-order",component : PlaceOrderComponent}  
   ]},
   {path:'priest',component : PriestPageComponent},
+  {path:'signup-user',component : SignUpUserComponent},
+  {path:'register-priest',component : RegisterPriestComponent},
   {path : "**", component : PageNotFountComponent}
 ];
 

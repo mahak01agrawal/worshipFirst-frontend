@@ -2,7 +2,7 @@
 
 <header class="header">
 
-    <a href="home.html" class="logo"><img src="../assets/image/logo3-removebg.png" alt=""> WorshipFirst</a>
+    <a routerLink="" class="logo"><img src="../assets/image/logo3-removebg.png" alt=""> WorshipFirst</a>
 
     <form class="search-form">
         <input [(ngModel)] = "words" (keyup)="searchProduct($event)" name="a" placeholder="search here..." id="search-box" >
@@ -62,11 +62,11 @@
         <input type="email" placeholder="enter your email" class="box" [(ngModel)]="email" name="s">
         <input type="password" placeholder="enter your password" class="box" [(ngModel)]="password" name="d">
         <input type="submit" value="login as user" class="btn" (click)="loginAsUser()">
-        <p>login as user with :<a (click)="socialLogin()">Google</a></p>
+        <p>login as user with :<a  href="#"   (click)="socialLogin()">Google</a></p>
         <input type="submit" value="login as pandit ji" class="btn" (click)="loginAsPandit()">
         <p>forget password? <a href="#">click here</a></p>
-        <p>don't have an account? <a href="#">create now</a></p>
-        <p>Register As Pandit ji :<a href="#"> Register</a></p>
+        <p>don't have an account? <a routerLink="/signup-user">create now</a></p>
+        <p>Register As Priest :<a routerLink="/register-priest"> Register</a></p>
     </form>
 </div>
 
