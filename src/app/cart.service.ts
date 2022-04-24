@@ -28,4 +28,12 @@ export class CartService {
     let api = "https://worship-first-by-tech-priest.herokuapp.com/cart/delete-product/" +userId+"/"+pid ;
     return this.http.delete(api);
   }
+
+  deleteCart(){
+    let userId = JSON.parse(localStorage.getItem("user") || " ");
+    userId = userId._id;
+    console.log(userId);
+    let api = "http://localhost:3000/cart/delete/" +userId;
+    return this.http.delete(api);
+  }
 }

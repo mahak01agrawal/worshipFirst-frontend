@@ -23,15 +23,20 @@ export class ShopGeneralComponent implements OnInit {
         this.pacakes.push(element);
       }
     }
-    catch(err){
-    }
-        
+    catch(err){}
     }
     });
-
-    cart.viewCart().subscribe(data=>{
-      this.cartData = data;
-    })
+    this.cartData = "";
+    if(localStorage.getItem("user")){
+      console.log("kol");
+      cart.viewCart().subscribe(data=>{
+        console.log("daya"+data);
+        if(data)
+          this.cartData = data;
+        else
+          this.cartData = "";
+      })
+    }  
   }
 
   add2Cart = "fas fa-shopping-cart";
@@ -54,7 +59,6 @@ export class ShopGeneralComponent implements OnInit {
           console.log(data);
         })
       }
-      
     }
     else{
       alert("Please Login First");
@@ -63,6 +67,7 @@ export class ShopGeneralComponent implements OnInit {
   ngOnInit(): void {}
 
   checkProduct(proId:string){
+    if(this.cartData){
       for(let element of this.cartData.productList){
         if(element._id == proId){
           let appliedClassList = document.getElementById(proId)?.classList;        
@@ -71,6 +76,8 @@ export class ShopGeneralComponent implements OnInit {
           console.log("props");
         }
       }
+    }
+      
       return true;
   }
 }
