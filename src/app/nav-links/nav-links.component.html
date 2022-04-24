@@ -2,15 +2,11 @@
 
 <nav class="navbar navbar-expand-lg navbar-light " style="padding-left:100px ; font-size: large; ">
   <div class="container-fluid">
-    <!-- <a class="navbar-brand" href="#">Quick links</a> -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-
       <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="gap: 2rem;">
-
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" style="color: white;" aria-expanded="false">
             Ocassions
@@ -21,7 +17,6 @@
             </div>
           </ul>
         </li>
-
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false"style="color: white;">
             General samagri
@@ -32,7 +27,6 @@
             </div>
           </ul>
         </li>
-      
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" style="color: white;" data-toggle="dropdown" aria-expanded="false">
            Photo Frames
@@ -43,7 +37,6 @@
             </div>
           </ul>
         </li>
-    
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" style="color: white;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
            book preist
@@ -54,86 +47,11 @@
             <a class="dropdown-item" routerLink="book-priest">Shradhya</a>
           </ul>
         </li>
-    
-        
         <li class="nav-item" *ngFor="let cat of mediaCategories" >
           <a class="nav-link " routerLink="/audio-videos/{{cat._id}}" style="color: white;" >{{cat.name}}</a>
          </li>
-
       </ul>
-     
     </div>
   </div>
 </nav>
-<!-- <nav class="navbar text-white navbar-expand">
-    <div class="container-nav">
-      <div class="nav">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-
-
-
-        <ul class="navbar-nav " style="margin-left: 80px; gap: 1.5rem;">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false" style="color:white;">
-              Ocassions
-            </a>
-            <div class="dropdown-menu" style="font-size: large;" aria-labelledby="navbarDropdown">
-              <div *ngFor="let Packages of package">
-                <a class="dropdown-item" routerLink="/shops/{{Packages._id}}">{{Packages.name}}</a>
-              </div>
-            </div>
-          </li>
-
-
-
-
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              General Samagri
-            </a>
-            <div>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" routerLink="/shops/{{products._id}}" *ngFor="let products of product">{{products.name}}</a>
-              </div>
-            </div>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-             aria-haspopup="true" aria-expanded="false" >
-             Photo Frames
-             </a>
-            <div class="dropdown-menu" style="font-size: large;" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" routerLink="book-priest">Lighted Frame</a>
-              <a class="dropdown-item" routerLink="book-priest">Unlighted Frame</a>
-            </div>
-         </li>
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                 aria-haspopup="true" aria-expanded="false" >
-                 Book Priest
-                 </a>
-                <div class="dropdown-menu" style="font-size: large;" aria-labelledby="navbarDropdown">
-                  
-                </div>
-             </li>
-             
-                <li class="nav-item" *ngFor="let cat of mediaCategories">
-                <a class="nav-link " routerLink="/audio-videos/{{cat._id}}" >{{cat.name}}</a>
-               </li>
-             </ul>
-         </div>
-       </div>
-    </div>
-</nav> -->
-<router-outlet></router-outlet>
 

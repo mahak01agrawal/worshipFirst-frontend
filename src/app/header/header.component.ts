@@ -17,49 +17,56 @@ import { UserService } from '../user.service';
 })
 export class HeaderComponent implements OnInit {
 
-  user! : SocialUser;
-  email:string="";
-  password:string="";
-  userProfile:any;
-  panditProfile:any;
-  cartList:any;
-  constructor(private authService : SocialAuthService,private userService:UserService,private priest:PriestService,private router:Router,private cartService:CartService, private productService:ProductService) {
-    // this.cart = JSON.parse(localStorage.getItem("cart") || "");
-    this.hello();
-   }
-   totalPrice?:number=10;
-   hello(){
-    this.cartService.viewCart().subscribe(data=>{
-      this.cartList = data.productList;
-      this.totalPrice = 0;
-      for(let element of this.cartList){
-        this.totalPrice += element.price;
+  user!: SocialUser;
+  email: string = "";
+  password: string = "";
+  userProfile: any;
+  panditProfile: any;
+  cartList: any[] = [];
+  constructor(private authService: SocialAuthService, private userService: UserService, private priest: PriestService, private router: Router, private cartService: CartService, private productService: ProductService) {
+    if (localStorage.getItem("user")) {
+      this.viewCartProduct();
+    }
+  }
+  totalPrice?: number = 0;
+  viewCartProduct() {
+    this.cartService.viewCart().subscribe(data => {
+      if (data) {
+        this.cartList = data.productList;
+        this.totalPrice = 0;
+        for (let element of this.cartList) {
+          this.totalPrice += element.price;
+        }
       }
-    })
-   }
+    });
+  }
+  checkCart() {
+    if (this.cartList.length > 0)
+      return true;
+    return false;
+  }
   ngOnInit(): void {
     this.authService.authState.subscribe((data: any) => {
       this.user = data;
-      this.userService.socialLogin(this.user).subscribe(data=>{
+      this.userService.socialLogin(this.user).subscribe(data => {
         this.userProfile = data;
-        localStorage.setItem("token",data.token);
-        localStorage.setItem("user",JSON.stringify(data.user));
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("user", JSON.stringify(data.user));
       });
     });
   }
 
-  removeFormCart(pid:string){
-    this.cartService.removeFromCart(pid).subscribe(data=>{
-      console.log(data);
-      this.hello();
-    }) 
+  removeFormCart(pid: string) {
+    this.cartService.removeFromCart(pid).subscribe(data => {
+      this.viewCartProduct();
+    })
   }
 
   socialLogin() {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
 
-  signOut(){
+  signOut() {
     localStorage.removeItem("token");
     this.authService.signOut();
   }
@@ -73,7 +80,8 @@ export class HeaderComponent implements OnInit {
     let closer: any = document.querySelector('#closer');
     closer.style.display = 'block';
     cart.classList.toggle('active');
-    this.hello();
+    if (localStorage.getItem("user"))
+      this.viewCartProduct();
   }
   showLogin(login: any) {
     let closer: any = document.querySelector('#closer');
@@ -98,50 +106,44 @@ export class HeaderComponent implements OnInit {
   searchBtn(search: any) {
     search.classList.toggle('active');
   }
-  
-  loginAsUser(){
-    this.userService.userLogin(this.email,this.password).subscribe(data=>{
+
+  loginAsUser() {
+    this.userService.userLogin(this.email, this.password).subscribe(data => {
       this.userProfile = data.result;
-      localStorage.setItem("user",JSON.stringify(data.result));
+      localStorage.setItem("user", JSON.stringify(data.result));
       localStorage.setItem('token', data.token);
     });
   }
 
   loginAsPandit() {
     this.priest.priestLogin(this.email, this.password).subscribe((data) => {
-      if(data.status == "success"){
-      localStorage.setItem('token', data.token);
-      this.router.navigate(['priest'])
+      if (data.status == "success") {
+        localStorage.setItem('token', data.token);
+        this.router.navigate(['priest'])
       };
     });
   }
 
-  userIsLoggedIn(){
-    if(this.userService.checkUser()){
-      this.userProfile = JSON.parse(this.userService.checkUser()|| " ");
+  userIsLoggedIn() {
+    if (this.userService.checkUser()) {
+      this.userProfile = JSON.parse(this.userService.checkUser() || " ");
       return true;
     }
     return false;
   }
 
-  isLoggedIn(){
-    if(this.priest.checkToken()){
-      return true;
-    }
-    return false;
-  }
   signout() {
     localStorage.removeItem('token');
     localStorage.removeItem("user");
   }
 
-  words:string="";
-  searchProduct(event:any){
+  words: string = "";
+  searchProduct(event: any) {
     let val = event.target.value;
-    this.router.navigate(["shops",val]);
+    this.router.navigate(["shops", val]);
   }
 
-  checkout(){
+  checkout() {
     this.router.navigate(["place-order"]);
   }
 }

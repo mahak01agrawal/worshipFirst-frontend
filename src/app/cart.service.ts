@@ -32,7 +32,6 @@ export class CartService {
   deleteCart(){
     let userId = JSON.parse(localStorage.getItem("user") || " ");
     userId = userId._id;
-    console.log(userId);
     let api = "http://localhost:3000/cart/delete/" +userId;
     return this.http.delete(api);
   }

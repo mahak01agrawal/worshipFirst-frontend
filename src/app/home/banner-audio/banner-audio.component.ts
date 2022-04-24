@@ -10,7 +10,6 @@ export class BannerAudioComponent implements OnInit {
   mediaFiles: any[]= [];
   constructor(private media:MediaFileService) { 
     media.viewMediaFile().subscribe(data=>{
-      console.log(data);
       this.mediaFiles = <any>data;
     })
   }
