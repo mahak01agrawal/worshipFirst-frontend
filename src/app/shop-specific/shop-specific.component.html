@@ -1,5 +1,3 @@
-<app-header></app-header>
-<app-nav-links></app-nav-links>
 <section class="products">
 
     <h1 class="title"> <span>our products</span> <a href="#">view all >></a> </h1>
@@ -18,15 +16,8 @@
                 <div class="price">PRICE ₹ {{product.price}} Only</div>
                 <h3>{{product.name}}</h3>
                 <span>QUANTITY {{product.stock}} </span>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                </div>
+                <h5 style="color: #779;">{{product.description}}</h5>
             </div>
         </div>
     </div>
 </section>
-<app-footer></app-footer>

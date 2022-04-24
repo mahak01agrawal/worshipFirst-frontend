@@ -16,7 +16,6 @@ export class AudioVideoSpecificComponent implements OnInit {
       this.id=this.route.snapshot.paramMap.get("id");
       if(event instanceof NavigationEnd){
         this.media.viewMediaFileByCat(this.id).subscribe(data=>{
-          console.log(data);
           this.audios=[];
           this.videos = [];
           for(let element of data){
