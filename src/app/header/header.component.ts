@@ -86,16 +86,18 @@ export class HeaderComponent implements OnInit {
     let nav: any = document.querySelector('#nav');
     let cart: any = document.querySelector('#cart');
     let login: any = document.querySelector('#login');
-    let user: any = document.querySelector('#user');
+    let search: any = document.querySelector('#search');
 
     closer.style.display = 'none';
     nav.classList.remove('active');
     cart.classList.remove('active');
     login.classList.remove('active');
+    // search.classList.remove('active');
+
   }
-  // searchBtn(search: any) {
-  //   search.classList.toggle('active');
-  // }
+  searchBtn(search: any) {
+    search.classList.toggle('active');
+  }
   
   loginAsUser(){
     this.userService.userLogin(this.email,this.password).subscribe(data=>{

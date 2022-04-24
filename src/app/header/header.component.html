@@ -1,17 +1,17 @@
 <!-- header section starts  -->
 
-<header class="header">
+<header class="header"  >
 
     <a routerLink="" class="logo"><img src="../assets/image/logo3-removebg.png" alt=""> WorshipFirst</a>
 
-    <form class="search-form">
+    <form class="search-form"  id="search" #search >
         <input [(ngModel)] = "words" (keyup)="searchProduct($event)" name="a" placeholder="search here..." id="search-box" >
         <a ><label for="search-box" class="fas fa-search"></label></a>
     </form>
 
     <div class="icons">
         <div id="menu-btn" class="fas fa-bars" (click)="navLinks(nav)"></div>
-        <div id="search-btn" class="fas fa-search" ></div>
+        <div id="search-btn" class="fas fa-search" (click)="searchBtn(search)"></div>
         <div id="cart-btn" class="fas fa-shopping-cart" (click)="showCart(cart)"></div>
         <div id="login-btn" class="fas fa-user" (click)="showLogin(login)"></div>
 

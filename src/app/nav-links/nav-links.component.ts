@@ -9,6 +9,7 @@ import { CategoryService } from '../category.service';
 })
 export class NavLinksComponent implements OnInit {
   mediaCategories:any = [];
+  photoframes : any=[];
   constructor(private media:MediaFileService,private category:CategoryService) {
     media.viewCategory().subscribe(data=>{
       this.mediaCategories = data;
@@ -20,6 +21,10 @@ export class NavLinksComponent implements OnInit {
     category.View('product').subscribe((data) => {
       console.log(data);
       this.product = data;
+    });
+    category.View('photo frames').subscribe((data) => {
+      console.log(data);
+      this.photoframes = data;
     });
    }
  package:any=[];

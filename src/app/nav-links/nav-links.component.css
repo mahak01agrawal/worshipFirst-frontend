@@ -2,11 +2,11 @@
     color: rgb(245, 235, 235) !important;
     background-color: #fdb068 !important;
   }
-  .nav li a{
+  /* .nav li a{
    color: white;
    font-size:  20px;
-  }
-  .nav li .nav-link:hover{
+  } */
+  .nav-item:hover .nav-link{
     transition: 0.5s ease-in-out;
     color:#779 !important;
    
