@@ -37,6 +37,7 @@ import { CartService } from './cart.service';
 import { PlaceOrderComponent } from './place-order/place-order.component';
 import { SignUpUserComponent } from './sign-up-user/sign-up-user.component';
 import { RegisterPriestComponent } from './register-priest/register-priest.component';
+import { OtpCheckerComponent } from './otp-checker/otp-checker.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { RegisterPriestComponent } from './register-priest/register-priest.compo
     PlaceOrderComponent,
     SignUpUserComponent,
     RegisterPriestComponent,
+    OtpCheckerComponent,
   ],
   imports: [
     BrowserModule,

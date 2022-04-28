@@ -6,6 +6,7 @@ import { AudioVideoSpecificComponent } from './audio-video-specific/audio-video-
 import { BookPriestComponent } from './book-priest/book-priest.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
+import { OtpCheckerComponent } from './otp-checker/otp-checker.component';
 import { PageNotFountComponent } from './page-not-fount/page-not-fount.component';
 import { PlaceOrderComponent } from './place-order/place-order.component';
 import { PriestPageComponent } from './priest-page/priest-page.component';
@@ -33,6 +34,8 @@ const routes: Routes = [
   ]},
   {path:'priest',component : PriestPageComponent},
   {path:'signup-user',component : SignUpUserComponent},
+  {path:'otp-checker/:id',component : OtpCheckerComponent},
+
   {path:'register-priest',component : RegisterPriestComponent},
   {path : "**", component : PageNotFountComponent}
 ];
