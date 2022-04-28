@@ -17,7 +17,6 @@ export class ShopSpecificComponent implements OnInit {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.catid = <string>this.ActivateRoute.snapshot.paramMap.get("id");
-
         if (this.catid.match('^[a-zA-Z]')) {
           this.productService.searchProduct(this.catid).subscribe(data => {
             this.products = data;

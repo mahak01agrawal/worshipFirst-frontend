@@ -23,7 +23,7 @@ export class PlaceOrderComponent implements OnInit {
   address?: string;
 
   payment() {
-
+    
     let producList = [];
     for (let element of this.cartData) {
       producList.push({ product: element._id, totalPrice: element.price, qty: 1 });

@@ -15,15 +15,12 @@ export class NavLinksComponent implements OnInit {
       this.mediaCategories = data;
     });
     category.View('package').subscribe((data) => {
-      console.log(data);
       this.package = data;
     });
     category.View('product').subscribe((data) => {
-      console.log(data);
       this.product = data;
     });
     category.View('photo frames').subscribe((data) => {
-      console.log(data);
       this.photoframes = data;
     });
    }
